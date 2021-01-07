@@ -4,6 +4,19 @@
 
 ## User settings
 xcuserdata/
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+UserInterface.xcuserstate 
+
+project.xcworkspace/
+TTProduct.xcworkspace/
+TTProduct.xcworkspace/xcuserdata/
+
+Pods/project.xcodeproj/
+Pods/Pods.xcodeproj/
+Pods/Pods.xcodeproj/xcuserdata/
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
