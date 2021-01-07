@@ -7,16 +7,14 @@
 
 import Cocoa
 
-enum TTControlState: NSInteger {
+private enum TTControlState: NSInteger {
+    
     case normal        = 1   // 默认(常规) 0001
     case highlighted   = 2   // 进入      0010
     case press         = 4   // 按下(不放) 0100
     case disabled      = 8   // 禁用      1000
     case selected      = 16  // 选择 0001 0000
 }
-
-fileprivate let TTResponderEventTargetKey: NSString = "ResponderEventTargetKey"
-fileprivate let TTResponderEventActionKey: NSString = "ResponderEventActionKey"
 
 @objc protocol TTResponderProtocol: NSObjectProtocol {
     
@@ -27,14 +25,35 @@ fileprivate let TTResponderEventActionKey: NSString = "ResponderEventActionKey"
     ///
     /// - 您可以多次调用此方法来为控件配置多个目标和操作
     @objc optional func tt_addTarget(_ target: AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask)
+    
+    @objc optional func tt_removeTarget(_ target: AnyObject?, action: Selector?, for controlEvents: NSEvent.EventTypeMask)
 }
 
-extension TTResponderProtocol {
-    var TTEventTargetKey: NSString {
-        return TTResponderEventTargetKey
-    }
+extension NSResponder {
     
-    var TTEventActionKey: NSString {
-        return TTResponderEventActionKey
+    private static let TTEventTargetKey: NSString = "ResponderEventTargetKey"
+    private static let TTEventActionKey: NSString = "ResponderEventActionKey"
+    
+    struct TTEventKey : Hashable, Equatable, RawRepresentable {
+        
+        public var rawValue: NSString
+        
+        public static var target: NSControl.TTEventKey { return TTEventKey(rawValue: TTEventTargetKey) }
+        
+        public static var action: NSControl.TTEventKey { return TTEventKey(rawValue: TTEventActionKey) }
+    }
+}
+
+extension NSControl {
+    
+     struct TTState : OptionSet {
+        
+        public var rawValue:UInt
+        
+        public static var normal: NSControl.TTState { return TTState(rawValue: 1<<0) }
+        public static var highlighted: NSControl.TTState { return TTState(rawValue: 1<<1) }
+        public static var press: NSControl.TTState { return TTState(rawValue: 1<<2) }
+        public static var disabled: NSControl.TTState { return TTState(rawValue: 1<<3) }
+        public static var selected: NSControl.TTState { return TTState(rawValue: 1<<4) }
     }
 }
