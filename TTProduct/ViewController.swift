@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TTProduct
 //
-//  Created by Taurin on 1/4/21.
+//  Created by Toj on 1/4/21.
 //
 
 import Cocoa

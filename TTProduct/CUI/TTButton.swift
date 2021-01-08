@@ -2,7 +2,7 @@
 //  TTButton.swift
 //  TTProduct
 //
-//  Created by Taurin on 1/5/21.
+//  Created by Toj on 1/5/21.
 //
 
 import Cocoa
@@ -20,9 +20,9 @@ enum TTTitleAlignment {
     case right
 }
 
+// MARK: - Class Properties
 class TTButton: NSButton {
     
-    // MARK: - Properties
     // MARK: Public
     
     // 鼠标形状
@@ -31,24 +31,25 @@ class TTButton: NSButton {
     public var tt_selected: Bool = false {
         didSet {
             if !tt_selected {
-                t_containedStates.insert(.selected)
+                t_insertedStates.insert(.selected)
                 return
             }
-            t_containedStates.remove(.selected)
+            t_insertedStates.remove(.selected)
         }
     }
     
     public var tt_enabled: Bool = true {
         didSet {
             if tt_enabled {
-                t_containedStates.insert(.disabled)
+                t_insertedStates.insert(.disabled)
                 return
             }
-            t_containedStates.remove(.disabled)
+            t_insertedStates.remove(.disabled)
         }
     }
     
     public var tt_enabledHighlighted: Bool = true
+    
     public var tt_userInteractionEnabled: Bool = true
     
     public var tt_backgroundColor: NSColor? {
@@ -62,10 +63,16 @@ class TTButton: NSButton {
         }
     }
     
-    // 文字的渲染属性
+    /// 文字的渲染属性
+    /// 设置后, 下面属性无效
+    /// tt_titleFont, tt_lineStyle, tt_lineStyle, tt_alignment
+    /// tt_lineBreakMode, tt_titleBackgroundColor, tt_titleColor, font
+    /// 因为他会替换 私有属性 t_titleAttributes 值
     public var tt_titleAttributes: [NSAttributedString.Key : Any]?
+    
     // 文字 与 图片间距
     public var tt_spacing: CGFloat = 0
+    
     // 文字在图片的列序
     public var tt_titleAlignment: TTTitleAlignment = .left {
         didSet {
@@ -74,12 +81,9 @@ class TTButton: NSButton {
     }
     // 字体
     public var tt_titleFont: NSFont? {
-        set {
-            t_titleAttributes[NSAttributedString.Key.font] = newValue
+        didSet {
+            t_titleAttributes[NSAttributedString.Key.font] = tt_titleFont
             needsDisplay = true
-        }
-        get {
-            return t_titleAttributes[NSAttributedString.Key.font] as? NSFont
         }
     }
     
@@ -134,17 +138,17 @@ class TTButton: NSButton {
     // 当前状态
     private var tt_state: NSControl.TTState  {
         get {
-            if t_containedStates.contains(.disabled) { return .disabled }
-            if t_containedStates.contains(.press) { return .press }
-            if t_containedStates.contains(.highlighted) { return .highlighted }
-            if t_containedStates.contains(.selected) { return .selected }
-            return .normal;
+            if t_insertedStates.contains(.disabled) { return .disabled }
+            if t_insertedStates.contains(.press) { return .press }
+            if t_insertedStates.contains(.highlighted) { return .highlighted }
+            if t_insertedStates.contains(.selected) { return .selected }
+            return .normal
         }
     }
-    private(set) var tt_title: String?
+    private(set) var tt_title: String = ""
     private(set) var tt_titleColor: NSColor? {
         didSet {
-            t_titleAttributes[NSAttributedString.Key.foregroundColor] = tt_titleColor;
+            t_titleAttributes[NSAttributedString.Key.foregroundColor] = tt_titleColor
         }
     }
     private(set) var tt_image: NSImage?
@@ -152,7 +156,7 @@ class TTButton: NSButton {
     // 文字宽高
     var tt_titleSize: CGSize {
         get {
-            return boundingRectWithSize(size: CGSize(width: Int.max, height: Int.max))
+            return t_boundingRectWithSize(size: CGSize(width: Int.max, height: Int.max))
         }
     }
     
@@ -161,9 +165,9 @@ class TTButton: NSButton {
     private var t_trackingArea: NSTrackingArea?
     
     // 添加的所有状态
-    private var t_containedStates: NSControl.TTState = .normal {
+    private var t_insertedStates: NSControl.TTState = .normal {
         didSet {
-            self.setValueToStateAttributes(state: t_containedStates)
+            setValueToStateAttributes()
             needsDisplay = true
         }
     }
@@ -184,35 +188,38 @@ class TTButton: NSButton {
     }()
     
     // 每个状态信息
-    private lazy var t_stateAttributes: [NSControl.TTState.RawValue: NSMutableDictionary] = {
-        var attributes: [NSControl.TTState.RawValue: NSMutableDictionary] = [:]
+    private lazy var t_stateAttributes: [NSControl.TTState: NSMutableDictionary] = {
+        var attributes: [NSControl.TTState: NSMutableDictionary] = [:]
         
         let stateAttribute = NSMutableDictionary()
         stateAttribute[TTStateKey.titleColor] = NSColor.clear
         
-        attributes[NSControl.TTState.normal.rawValue] = stateAttribute
+        attributes[NSControl.TTState.normal] = stateAttribute
         return attributes
     }()
     
-    private lazy var tt_actions: [NSEvent.EventTypeMask.RawValue: NSMapTable<NSString, AnyObject>] = [:]
+    private lazy var tt_actions: [NSEvent.EventTypeMask: NSMapTable<NSString, AnyObject>] = [:]
     
+    // MARK: Cycle
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-        setupMakeInitialize()
+        t_setupMakeInitialize()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        setupMakeInitialize()
+        t_setupMakeInitialize()
     }
     
     deinit {
         print(className + " : " + #function)
     }
 }
+
+// MARK: - Class Override Function
 
 extension TTButton {
     
@@ -224,12 +231,21 @@ extension TTButton {
         }
     }
     
+    override var title: String {
+        set {
+            tt_setTitle(newValue, for: .normal)
+        }
+        get {
+            return tt_title
+        }
+    }
+    
     override var image: NSImage? {
         set {
             tt_setImage(newValue, for: .normal)
         }
         get {
-            return nil
+            return tt_image
         }
     }
     
@@ -253,29 +269,27 @@ extension TTButton {
     override func updateTrackingAreas() {
         guard t_trackingArea == nil else { return }
         
-        let options: NSTrackingArea.Options = [.mouseEnteredAndExited,
-                                               .mouseMoved,
-                                               .cursorUpdate,
-                                               .activeAlways
+        let aOptions: NSTrackingArea.Options = [.mouseEnteredAndExited,
+                                                .mouseMoved,
+                                                .cursorUpdate,
+                                                .activeAlways
         ]
-        t_trackingArea = NSTrackingArea(rect: bounds, options: options, owner: self, userInfo: nil)
+        t_trackingArea = NSTrackingArea(rect: bounds, options: aOptions, owner: self, userInfo: nil)
         addTrackingArea(t_trackingArea!)
     }
 }
 
-
+// MARK: - Class Override Event
 extension TTButton {
     
     // 鼠标刚进入
     override func mouseEntered(with event: NSEvent) {
         // print(className + " : " + #function)
         
-        if  !tt_enabled ||
-            !tt_enabledHighlighted ||
-            !tt_userInteractionEnabled
-        { return; }
+        if !tt_enabled || !tt_enabledHighlighted || !tt_userInteractionEnabled
+        { return }
         
-        t_containedStates.insert(.highlighted)
+        t_insertedStates.insert(.highlighted)
         t_responseEvents(controlEvents: .mouseEntered)
     }
     
@@ -283,11 +297,10 @@ extension TTButton {
     override func mouseDown(with event: NSEvent) {
         // print(className + " : " + #function)
         
-        if  !self.tt_enabled ||
-            !self.tt_userInteractionEnabled
-        { return; }
+        if  !self.tt_enabled || !self.tt_userInteractionEnabled
+        { return }
         
-        t_containedStates.insert(.press)
+        t_insertedStates.insert(.press)
         t_responseEvents(controlEvents: .leftMouseDown)
     }
     
@@ -295,17 +308,16 @@ extension TTButton {
     override func mouseUp(with event: NSEvent) {
         // print(className + " : " + #function)
         
-        if  !self.tt_enabled ||
-            !self.tt_userInteractionEnabled
-        { return; }
+        if !self.tt_enabled || !self.tt_userInteractionEnabled
+        { return }
         
-        t_containedStates.remove(.press)
+        t_insertedStates.remove(.press)
         
-        let locationInWindow = event.locationInWindow
-        let clickLocation = convert(locationInWindow, from: nil)
+        let aLocationInWindow = event.locationInWindow
+        let aClickLocation = convert(aLocationInWindow, from: nil)
         
-        let isContains = bounds.contains(clickLocation)
-        if !isContains { return }
+        let aIsContains = bounds.contains(aClickLocation)
+        if !aIsContains { return }
         
         t_responseEvents(controlEvents: .leftMouseUp)
     }
@@ -314,12 +326,10 @@ extension TTButton {
     override func mouseExited(with event: NSEvent) {
         // print(className + " : " + #function)
         
-        if  !tt_enabled ||
-            !tt_enabledHighlighted ||
-            !tt_userInteractionEnabled
-        { return; }
+        if !tt_enabled || !tt_enabledHighlighted || !tt_userInteractionEnabled
+        { return }
         
-        t_containedStates.remove(.highlighted)
+        t_insertedStates.remove(.highlighted)
         t_responseEvents(controlEvents: .mouseExited)
     }
     
@@ -331,10 +341,10 @@ extension TTButton {
     }
     
     private func t_responseEvents(controlEvents: NSEvent.EventTypeMask) {
-        guard let map = tt_actions[controlEvents.rawValue] else { return }
+        guard let aMap = tt_actions[controlEvents] else { return }
         
-        guard let aTarget = map.object(forKey: TTEventKey.target.rawValue) else { return }
-        let aAction = map.object(forKey: TTEventKey.action.rawValue) as? String ?? ""
+        guard let aTarget = aMap.object(forKey: TTEventKey.target.rawValue) else { return }
+        let aAction = aMap.object(forKey: TTEventKey.action.rawValue) as? String ?? ""
         guard aAction.count > 0 else { return }
         
         NSApp.sendAction(Selector(aAction), to: aTarget, from: self)
@@ -343,223 +353,261 @@ extension TTButton {
 
 extension TTButton {
     public func tt_setTitle(_ title: String?, for state: NSControl.TTState) {
-        let stateAttribute = getAttributeForState(state)
-        stateAttribute[TTStateKey.title.rawValue] = title;
+        let aStateAttribute = t_attributeForState(state)
+        aStateAttribute[TTStateKey.title.rawValue] = title
         
-        t_containedStates = .normal;
+        t_insertedStates = .normal
     }
     
     public func tt_setTitleColor(_ color: String?, for state: NSControl.TTState) {
-        let stateAttribute = getAttributeForState(state)
-        stateAttribute[TTStateKey.titleColor.rawValue] = color;
+        let aStateAttribute = t_attributeForState(state)
+        aStateAttribute[TTStateKey.titleColor.rawValue] = color
         
-        t_containedStates = .normal;
+        t_insertedStates = .normal
     }
     
     public func tt_setImage(_ image: NSImage?, for state: NSControl.TTState) {
-        let stateAttribute = getAttributeForState(state)
-        stateAttribute[TTStateKey.image.rawValue] = image;
+        let aStateAttribute = t_attributeForState(state)
+        aStateAttribute[TTStateKey.image.rawValue] = image
         
-        t_containedStates = .normal;
+        t_insertedStates = .normal
     }
     
     public func tt_setBackgroundImage(_ image: NSImage?, for state: NSControl.TTState) {
-        let stateAttribute = getAttributeForState(state)
-        stateAttribute[TTStateKey.backgroundImage.rawValue] = image;
+        let aStateAttribute = t_attributeForState(state)
+        aStateAttribute[TTStateKey.backgroundImage.rawValue] = image
         
-        t_containedStates = .normal;
+        t_insertedStates = .normal
     }
     
-    private func getAttributeForState(_ state: NSControl.TTState) -> NSMutableDictionary {
-        if let stateAttribute = t_stateAttributes[state.rawValue] {
+    private func t_attributeForState(_ state: NSControl.TTState) -> NSMutableDictionary {
+        if let stateAttribute = t_stateAttributes[state] {
             return stateAttribute
         }
         
-        let stateAttribute = NSMutableDictionary()
-        t_stateAttributes[state.rawValue] = stateAttribute
-        return stateAttribute
+        let aStateAttribute = NSMutableDictionary()
+        t_stateAttributes[state] = aStateAttribute
+        return aStateAttribute
     }
     
-    private func setValueToStateAttributes(state: NSControl.TTState) {
-        let _state = tt_state
+    private func setValueToStateAttributes() {
+        let aState = tt_state
+        let aDefAttributes: NSMutableDictionary? = t_stateAttributes[NSControl.TTState.normal]
         
-        var _stateAttribute = t_stateAttributes[_state.rawValue]
-        // 如果当前状态没有值就是normal状态
-        if _stateAttribute == nil {
-            _stateAttribute = t_stateAttributes[NSControl.TTState.normal.rawValue]
-        }
+        // 当前状态对应值
+        // 如果没有值就是normal状态
+        let aStateAttribute = t_stateAttributes[aState] ?? aDefAttributes
         
-        var titleString = _stateAttribute?[TTStateKey.title.rawValue] as AnyObject as? String ?? ""
-        if (titleString.count == 0 && _state != .normal) {
-            let tmpAttribute = t_stateAttributes[NSControl.TTState.normal.rawValue]
-            titleString = tmpAttribute?[TTStateKey.title.rawValue] as AnyObject as? String ?? ""
+        var aTitleString = aStateAttribute?[TTStateKey.title]
+        if (aTitleString == nil && aState != .normal) {
+            aTitleString = aDefAttributes?[TTStateKey.title]
         }
-        tt_title = titleString
+        tt_title = aTitleString as AnyObject as? String ?? ""
         
-        var stateColor = _stateAttribute?[TTStateKey.titleColor.rawValue] as AnyObject as? NSColor
-        if (stateColor == nil && _state != .normal) {
-            let tmpAttribute = t_stateAttributes[NSControl.TTState.normal.rawValue]
-            stateColor = tmpAttribute?[TTStateKey.titleColor.rawValue] as AnyObject as? NSColor
+        var aStateColor = aStateAttribute?[TTStateKey.titleColor]
+        if (aStateColor == nil && aState != .normal) {
+            aStateColor = aDefAttributes?[TTStateKey.titleColor]
         }
-        tt_titleColor = stateColor
+        tt_titleColor = aStateColor as AnyObject as? NSColor
         
-        var stateImage = _stateAttribute?[TTStateKey.image.rawValue] as AnyObject as? NSImage
-        if (stateImage == nil && _state != .normal) {
-            let tmpAttribute = t_stateAttributes[NSControl.TTState.normal.rawValue]
-            stateImage = tmpAttribute?[TTStateKey.image.rawValue] as AnyObject as? NSImage
+        var aStateImage = aStateAttribute?[TTStateKey.image]
+        if (aStateImage == nil && aState != .normal) {
+            aStateImage = aDefAttributes?[TTStateKey.image]
         }
-        tt_image = stateImage
+        tt_image = aStateImage as AnyObject as? NSImage
         
-        var stateBackgroundImage = _stateAttribute?[TTStateKey.backgroundImage.rawValue] as AnyObject as? NSImage
-        if (stateBackgroundImage == nil && _state != .normal) {
-            let tmpAttribute = t_stateAttributes[NSControl.TTState.normal.rawValue]
-            stateBackgroundImage = tmpAttribute?[TTStateKey.backgroundImage.rawValue] as AnyObject as? NSImage
+        var aStateBackgroundImage = aStateAttribute?[TTStateKey.backgroundImage]
+        if (aStateBackgroundImage == nil && aState != .normal) {
+            aStateBackgroundImage = aDefAttributes?[TTStateKey.backgroundImage]
         }
-        tt_backgroundImage = stateBackgroundImage
+        tt_backgroundImage = aStateBackgroundImage as AnyObject as? NSImage
     }
 }
 
+// MARK: - Class implementation TTResponderProtocol
 extension TTButton: TTResponderProtocol {
+    
     public func tt_addTarget(_ target:  AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask) {
         
-        let map = NSMapTable<NSString, AnyObject>.strongToWeakObjects()
-        map.setObject(target, forKey: TTEventKey.target.rawValue)
+        let aMap = NSMapTable<NSString, AnyObject>.strongToWeakObjects()
+        aMap.setObject(target, forKey: TTEventKey.target.rawValue)
         let aAction = NSStringFromSelector(action) as NSString
-        map.setObject(aAction, forKey: TTEventKey.action.rawValue)
+        aMap.setObject(aAction, forKey: TTEventKey.action.rawValue)
         
-        tt_actions[controlEvents.rawValue] = map
+        tt_actions[controlEvents] = aMap
     }
     
     public func tt_removeTarget(_ target: AnyObject?, action: Selector?, for controlEvents: NSEvent.EventTypeMask) {
-        tt_actions.removeValue(forKey: controlEvents.rawValue)
+        tt_actions.removeValue(forKey: controlEvents)
     }
 }
+
+// MARK: - Class draw Function
 
 extension TTButton {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         // 容器(view)大小
-        let selfWidth = bounds.size.width
-        let selfHeight = bounds.size.height
-        var rect = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight)
-        let borderWidth = layer?.borderWidth ?? 0
+        let aSelfWidth = bounds.size.width
+        let aSelfHeight = bounds.size.height
+        var aRect = CGRect(x: 0, y: 0, width: aSelfWidth, height: aSelfHeight)
+        let aBorderWidth = layer?.borderWidth ?? 0
         
         // 容器内部可容量大小
-        let contentWidth = selfWidth - borderWidth * 2
-        let contentHeight = selfHeight - borderWidth * 2
+        let aContentWidth = aSelfWidth - aBorderWidth * 2
+        let aContentHeight = aSelfHeight - aBorderWidth * 2
         
         // View: 背景图片
-        if let t_backgroundImage = tt_backgroundImage {
-            t_backgroundImage.draw(in: rect)
+        if let aBackgroundImage = tt_backgroundImage {
+            aBackgroundImage.draw(in: aRect)
         }
         
         // View: title, image
-        let t_title: NSString = NSString(string: tt_title ?? "")
-        if tt_image == nil && t_title.length == 0 { return }
+        if tt_title.count == 0 && tt_image == nil { return }
         
         // title rect
-        var titleX: CGFloat = 0;
-        var titleY: CGFloat = 0;
-        var titleWidth: CGFloat  = 0;
-        var titleHeight: CGFloat = 0;
+        var aTitleX: CGFloat = 0
+        var aTitleY: CGFloat = 0
+        var aTitleWidth: CGFloat  = 0
+        var aTitleHeight: CGFloat = 0
         
         // image rect
-        var imageX: CGFloat = 0;
-        var imageY: CGFloat = 0;
-        var imageWidth: CGFloat  = 0;
-        var imageHeight: CGFloat = 0;
+        var aImageX: CGFloat = 0
+        var aImageY: CGFloat = 0
+        var aImageWidth: CGFloat  = 0
+        var aImageHeight: CGFloat = 0
         
         // image size
-        if let t_image = tt_image {
-            let imageVWidth  = t_image.size.width;
-            let imageVHeight = t_image.size.height;
-            imageWidth  = imageVWidth;
-            imageHeight = imageVHeight;
-            if imageWidth > contentWidth {
-                imageWidth = contentWidth;
-                imageHeight = imageWidth * imageVHeight / imageVWidth;
+        if let aImage = tt_image {
+            let aImageVWidth  = aImage.size.width
+            let aImageVHeight = aImage.size.height
+            aImageWidth  = aImageVWidth
+            aImageHeight = aImageVHeight
+            if  aImageWidth > aContentWidth {
+                aImageWidth = aContentWidth
+                aImageHeight = aImageWidth * aImageVHeight / aImageVWidth
             }
             
-            if imageHeight > contentHeight {
-                imageHeight = contentHeight;
-                imageWidth = imageHeight * imageVWidth / imageVHeight;
+            if  aImageHeight > aContentHeight {
+                aImageHeight = aContentHeight
+                aImageWidth = aImageHeight * aImageVWidth / aImageVHeight
             }
         }
         
         // 上下
         if  tt_titleAlignment == .top || tt_titleAlignment == .bottom {
             // title size
-            if t_title.length > 0 {
-                titleWidth = contentWidth;
-                titleHeight = tt_titleSize.height;
+            if tt_title.count > 0 {
+                aTitleWidth = aContentWidth
+                aTitleHeight = tt_titleSize.height
             }
             
             // 填充最大高度
-            let totalVHeight = titleHeight + imageHeight + tt_spacing;
+            let aTotalVHeight = aTitleHeight + aImageHeight + tt_spacing
             
             // X位置
-            titleX = borderWidth
-            imageX = borderWidth + (contentWidth - imageWidth) * 0.5;
+            aTitleX = aBorderWidth
+            aImageX = aBorderWidth + (aContentWidth - aImageWidth) * 0.5
             
             // Y位置
-            titleY = borderWidth + (contentHeight - totalVHeight) * 0.5;
-            if (titleY < 0) { titleY = borderWidth }
-            imageY = titleY + titleHeight + tt_spacing;
+            aTitleY = aBorderWidth + (aContentHeight - aTotalVHeight) * 0.5
+            if (aTitleY < 0) { aTitleY = aBorderWidth }
+            aImageY = aTitleY + aTitleHeight + tt_spacing
             if tt_titleAlignment == .bottom {
-                imageY = titleY;
-                titleY = imageY + imageHeight + tt_spacing;
+                aImageY = aTitleY
+                aTitleY = aImageY + aImageHeight + tt_spacing
             }
         }
         
         // 左右
         if  tt_titleAlignment == .right || tt_titleAlignment == .left {
             // title size
-            if t_title.length > 0 {
+            if tt_title.count > 0 {
                 // height
-                titleHeight = tt_titleSize.height;
+                aTitleHeight = tt_titleSize.height
                 // width
-                titleWidth = tt_titleSize.width;
+                aTitleWidth = tt_titleSize.width
             }
             // 填充最大宽度
-            let totalVWidth = titleWidth + tt_spacing + imageWidth;
+            let aTotalVWidth = aTitleWidth + tt_spacing + aImageWidth
             
             // Y位置
-            imageY = borderWidth + (contentHeight - imageHeight) * 0.5
-            titleY = borderWidth + (contentHeight - titleHeight) * 0.5;
+            aImageY = aBorderWidth + (aContentHeight - aImageHeight) * 0.5
+            aTitleY = aBorderWidth + (aContentHeight - aTitleHeight) * 0.5
             
             // X位置
-            titleX = borderWidth + (contentWidth - totalVWidth) * 0.5;
-            if (titleX < 0) { titleX = borderWidth }
-            imageX = titleX + titleWidth + tt_spacing;
+            aTitleX = aBorderWidth + (aContentWidth - aTotalVWidth) * 0.5
+            if (aTitleX < 0) { aTitleX = aBorderWidth }
+            aImageX = aTitleX + aTitleWidth + tt_spacing
             if (tt_titleAlignment == .right) {
-                imageX = titleX;
-                titleX = imageX + imageWidth + tt_spacing;
+                aImageX = aTitleX
+                aTitleX = aImageX + aImageWidth + tt_spacing
             }
         }
         
         // 下面逻辑不变
         // View: title
-        if (t_title.length > 0) {
-            rect = NSMakeRect(titleX, titleY, titleWidth, titleHeight);
-            
+        if (tt_title.count > 0) {
             if let titleAttributes = tt_titleAttributes {
                 t_titleAttributes = titleAttributes
             }
             
-            tt_title?.draw(in: rect, withAttributes: t_titleAttributes)
+            aRect = NSMakeRect(aTitleX, aTitleY, aTitleWidth, aTitleHeight)
+            tt_title.draw(in: aRect, withAttributes: t_titleAttributes)
         }
         
         // View: image
         if let _ = tt_image {
-            rect = NSMakeRect(imageX, imageY, imageWidth, imageHeight);
-            tt_image?.draw(in: rect)
+            aRect = NSMakeRect(aImageX, aImageY, aImageWidth, aImageHeight)
+            tt_image?.draw(in: aRect)
         }
     }
 }
 
+// MARK: - Public Function
 
 extension TTButton {
+    
+}
+
+// MARK: - Private Function
+
+extension TTButton {
+    
+    private func t_boundingRectWithSize(size: CGSize) -> CGSize {
+        
+        var aAttributes: [NSAttributedString.Key : Any] = [:]
+        if let titleFont = tt_titleFont {
+            aAttributes[NSAttributedString.Key.font] = titleFont
+        }
+        
+        guard tt_title.count > 0 else {
+            return .zero
+        }
+        
+        return tt_title.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: aAttributes).size
+    }
+}
+
+// MARK: - Initialize Function
+
+extension TTButton {
+    
+    private func t_setupMakeInitialize() {
+        title = ""
+        focusRingType = .none
+        cell?.isBordered = false
+        cell?.isHighlighted = false
+        tt_backgroundColor = .clear
+        tt_titleFont = NSFont.systemFont(ofSize: 15)
+    }
+}
+
+// MARK: - Keys
+
+extension TTButton {
+    
     struct TTStateKey : Hashable, Equatable, RawRepresentable {
         
         private static let TTStateTitleKey: NSString = "StateTitleKey"
@@ -576,35 +624,5 @@ extension TTButton {
         public static var image: NSControl.TTEventKey { return TTEventKey(rawValue: TTStateImageKey) }
         
         public static var backgroundImage: NSControl.TTEventKey { return TTEventKey(rawValue: TTStateBackgroundImageKey) }
-    }
-}
-
-extension TTButton {
-    
-    public func boundingRectWithSize(size: CGSize) -> CGSize {
-        
-        var attributes: [NSAttributedString.Key : Any] = [:]
-        if let titleFont = tt_titleFont {
-            attributes[NSAttributedString.Key.font] = titleFont
-        }
-        
-        guard let t_title = tt_title, t_title.count > 0 else {
-            return .zero
-        }
-        
-        return t_title.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes).size
-    }
-}
-
-// MARK: - 初始化参数赋值
-
-extension TTButton {
-    private func setupMakeInitialize() {
-        title = ""
-        cell?.isHighlighted = false
-        cell?.isBordered = false
-        tt_backgroundColor = .clear
-        focusRingType = .none
-        tt_titleFont = NSFont.systemFont(ofSize: 15)
     }
 }

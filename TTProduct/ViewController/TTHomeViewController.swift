@@ -2,7 +2,7 @@
 //  TTHomeViewController.swift
 //  TTProduct
 //
-//  Created by Taurin on 1/5/21.
+//  Created by Toj on 1/5/21.
 //
 
 import Cocoa

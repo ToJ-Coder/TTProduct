@@ -22,6 +22,8 @@
 		CE76F8BC25A47FA0002F6A51 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8BB25A47FA0002F6A51 /* TTLabel.swift */; };
 		CE76F8C625A55C5E002F6A51 /* TTResponderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8C525A55C5E002F6A51 /* TTResponderProtocol.swift */; };
 		CE76F8C925A565CE002F6A51 /* Documentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8C825A565CE002F6A51 /* Documentation.swift */; };
+		CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511525A83D5500C5A618 /* CodeComment.swift */; };
+		CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511B25A83DC500C5A618 /* CodeSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		CE76F8BB25A47FA0002F6A51 /* TTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
 		CE76F8C525A55C5E002F6A51 /* TTResponderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTResponderProtocol.swift; sourceTree = "<group>"; };
 		CE76F8C825A565CE002F6A51 /* Documentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documentation.swift; sourceTree = "<group>"; };
+		CEE1511525A83D5500C5A618 /* CodeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeComment.swift; sourceTree = "<group>"; };
+		CEE1511B25A83DC500C5A618 /* CodeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSegment.swift; sourceTree = "<group>"; };
 		EF65B9F565B54E2F384C4C26 /* Pods-TTProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct.debug.xcconfig"; path = "Target Support Files/Pods-TTProduct/Pods-TTProduct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +101,7 @@
 		CE3BFB7D25A30D7200A44B7D /* TTProduct */ = {
 			isa = PBXGroup;
 			children = (
-				CE76F8C825A565CE002F6A51 /* Documentation.swift */,
+				CEE1511425A83CB100C5A618 /* Documentation */,
 				CE3BFB8825A30D7300A44B7D /* TTProduct.entitlements */,
 				CE3BFB8425A30D7300A44B7D /* Main.storyboard */,
 				CE3BFB7E25A30D7200A44B7D /* AppDelegate.swift */,
@@ -211,6 +215,16 @@
 				CE3BFBA625A3106C00A44B7D /* TTViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CEE1511425A83CB100C5A618 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE76F8C825A565CE002F6A51 /* Documentation.swift */,
+				CEE1511525A83D5500C5A618 /* CodeComment.swift */,
+				CEE1511B25A83DC500C5A618 /* CodeSegment.swift */,
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +348,11 @@
 				CE3BFBA725A3106C00A44B7D /* TTViewController.swift in Sources */,
 				CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */,
 				CE76F8B025A4177E002F6A51 /* TTLoginViewController.swift in Sources */,
+				CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */,
 				CE3BFBA325A3105100A44B7D /* TTWindowController.swift in Sources */,
 				CE76F8C925A565CE002F6A51 /* Documentation.swift in Sources */,
 				CE3BFB9F25A3103B00A44B7D /* TTWindow.swift in Sources */,
+				CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */,
 				CE3BFBB425A31FD800A44B7D /* TTTitleBar.swift in Sources */,
 				CE76F8B325A41856002F6A51 /* TTHomeViewController.swift in Sources */,
 			);
@@ -488,7 +504,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.tt.www.toj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edu.520it.tt.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -511,7 +527,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.tt.www.toj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.edu.520it.tt.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

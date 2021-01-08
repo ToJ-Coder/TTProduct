@@ -1,11 +1,9 @@
 //
-//  Documentation.swift
+//  CodeComment.swift
 //  TTProduct
-
-//  Created by Taurin on 1/6/21.
-//  Specification Document
-//  Swift 总结开发中规范
 //
+//  Created by Toj on 1/8/21.
+//  注释规范
 
 // MARK: - e.g.1 MARK, FIXME, TUDO
 
@@ -39,7 +37,7 @@
 ///  let _ = tt_sum(value: 1, value2: 2)
 ///  ```
 /// 必须是2个整数
-/// 
+///
 /// Note: 2个数不能太大
 func tt_sum(value: Int, value2: Int) -> Int {
     return value + value2
@@ -97,3 +95,4 @@ func draw() {
 func tt_sum4(value: Int, value2: Int) -> Int {
     return value + value2
 }
+
