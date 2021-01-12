@@ -53,8 +53,8 @@ extension AppDelegate {
     }
     
     private func setupMakeWindow() -> NSWindow {
-        let vc = ViewController()
-//        let vc = TTHomeViewController()
+//        let vc = ViewController()
+        let vc = TTHomeViewController()
         
         let window = TTWindow(contentViewController: vc)
        

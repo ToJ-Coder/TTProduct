@@ -1,16 +1,36 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - KakaJSON (1.1.2)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - AFNetworking
+  - KakaJSON
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
+    - KakaJSON
     - SnapKit
 
 SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 8798764dfefced608f945be3606a5e9b17e75fea
+PODFILE CHECKSUM: 5cb627496c62f6e1612c2e39ff63010dac429375
 
 COCOAPODS: 1.10.0.beta.2

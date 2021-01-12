@@ -24,29 +24,20 @@ class TTHomeViewController: TTViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let map = NSMapTable<NSString, AnyObject>.strongToWeakObjects()
-//        aMap = map
-//        let name:NSString = "fbnm1"
-//        let title:NSString = "ttt23"
-//        let age:NSString = "13"
+        
+//        TTAPIService.Request.self loadding {
 //
-//        map.setObject(name, forKey: "kjasfd")
-//        map.setObject(title, forKey: "fglhgfs")
-//        map.setObject(age, forKey: "age")
-        
-        
-        
+//        } loaded {
+//
+//        }
         
         titleBar.isHidden = false
         titleBarHeight = 100
         titleBar.title = "傻BI了吧"
         
-        
         let button = TTButton()
         b = button
-        
         button.tt_selected = true
-        
         button.tt_setTitle("Python", for: .normal)
         button.tt_setTitleColor(NSColor.green, for: .normal)
         button.tt_setImage(NSImage(named: "1"), for: .normal)
@@ -58,19 +49,16 @@ class TTHomeViewController: TTViewController {
         button.tt_backgroundColor = .gray
 //        button.tt_cursor = NSCursor.pointingHand
         view.addSubview(button)
-        button.tt_addTarget(self, action: #selector(self.didTapTest2), for: .leftMouseUp)
+        button.tt_addTarget(self, action: #selector(self.didTapTest), for: .leftMouseUp)
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-        
-        let button2 = TTButton()
-        b2 = button2
-        button2.tt_backgroundColor = .gray
-        view.addSubview(button2)
-        button2.tt_addTarget(self, action: #selector(self.didTapTest), for: .leftMouseUp)
-        button2.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     }
     
     @objc private func didTapTest() {
         print(className + " : " + #function)
+        
+        TTAPIService.Request.secret { (car) in
+            
+        }
     }
     
     @objc private func didTapTest2() {

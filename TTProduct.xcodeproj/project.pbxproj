@@ -26,6 +26,15 @@
 		CE76F8C925A565CE002F6A51 /* Documentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8C825A565CE002F6A51 /* Documentation.swift */; };
 		CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511525A83D5500C5A618 /* CodeComment.swift */; };
 		CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511B25A83DC500C5A618 /* CodeSegment.swift */; };
+		CEF3322325AD5D3F00620977 /* TTNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322225AD5D3F00620977 /* TTNetwork.swift */; };
+		CEF3322725AD5EC000620977 /* TTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322625AD5EC000620977 /* TTAPIService.swift */; };
+		CEF3322B25AD688F00620977 /* TTHTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322A25AD688F00620977 /* TTHTTPHelper.swift */; };
+		CEF3322F25AD699700620977 /* AFNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322E25AD699700620977 /* AFNService.swift */; };
+		CEF3323225AD69B100620977 /* KFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3323125AD69B100620977 /* KFService.swift */; };
+		CEF3323B25AD78C900620977 /* TTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3323A25AD78C900620977 /* TTNetworkService.swift */; };
+		CEF3323E25AD793A00620977 /* TTServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3323D25AD793A00620977 /* TTServiceProtocol.swift */; };
+		CEF3324725AD9ECC00620977 /* TTSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3324625AD9ECC00620977 /* TTSecret.swift */; };
+		CEF3324A25AD9F3B00620977 /* TTObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3324925AD9F3B00620977 /* TTObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +61,15 @@
 		CE76F8C825A565CE002F6A51 /* Documentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documentation.swift; sourceTree = "<group>"; };
 		CEE1511525A83D5500C5A618 /* CodeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeComment.swift; sourceTree = "<group>"; };
 		CEE1511B25A83DC500C5A618 /* CodeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSegment.swift; sourceTree = "<group>"; };
+		CEF3322225AD5D3F00620977 /* TTNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNetwork.swift; sourceTree = "<group>"; };
+		CEF3322625AD5EC000620977 /* TTAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIService.swift; sourceTree = "<group>"; };
+		CEF3322A25AD688F00620977 /* TTHTTPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTHTTPHelper.swift; sourceTree = "<group>"; };
+		CEF3322E25AD699700620977 /* AFNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFNService.swift; sourceTree = "<group>"; };
+		CEF3323125AD69B100620977 /* KFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFService.swift; sourceTree = "<group>"; };
+		CEF3323A25AD78C900620977 /* TTNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNetworkService.swift; sourceTree = "<group>"; };
+		CEF3323D25AD793A00620977 /* TTServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTServiceProtocol.swift; sourceTree = "<group>"; };
+		CEF3324625AD9ECC00620977 /* TTSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSecret.swift; sourceTree = "<group>"; };
+		CEF3324925AD9F3B00620977 /* TTObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTObject.swift; sourceTree = "<group>"; };
 		EF65B9F565B54E2F384C4C26 /* Pods-TTProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct.debug.xcconfig"; path = "Target Support Files/Pods-TTProduct/Pods-TTProduct.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +212,10 @@
 		CE3BFB9725A30EBA00A44B7D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				CEF3321D25AD5C8500620977 /* Network */,
+				CEF3321F25AD5C8500620977 /* AliyunOSS */,
+				CEF3321C25AD5C8500620977 /* LiveVideo */,
+				CEF3321E25AD5C8500620977 /* Zip */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -208,6 +230,8 @@
 		CE3BFB9A25A30EBA00A44B7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CEF3324925AD9F3B00620977 /* TTObject.swift */,
+				CEF3324625AD9ECC00620977 /* TTSecret.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +255,57 @@
 				CEE1511B25A83DC500C5A618 /* CodeSegment.swift */,
 			);
 			path = Documentation;
+			sourceTree = "<group>";
+		};
+		CEF3321C25AD5C8500620977 /* LiveVideo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LiveVideo;
+			sourceTree = "<group>";
+		};
+		CEF3321D25AD5C8500620977 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEF3322225AD5D3F00620977 /* TTNetwork.swift */,
+				CEF3322625AD5EC000620977 /* TTAPIService.swift */,
+				CEF3322A25AD688F00620977 /* TTHTTPHelper.swift */,
+				CEF3323D25AD793A00620977 /* TTServiceProtocol.swift */,
+				CEF3323A25AD78C900620977 /* TTNetworkService.swift */,
+				CEF3322125AD5CDC00620977 /* AFN */,
+				CEF3322025AD5CDC00620977 /* KF */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CEF3321E25AD5C8500620977 /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Zip;
+			sourceTree = "<group>";
+		};
+		CEF3321F25AD5C8500620977 /* AliyunOSS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AliyunOSS;
+			sourceTree = "<group>";
+		};
+		CEF3322025AD5CDC00620977 /* KF */ = {
+			isa = PBXGroup;
+			children = (
+				CEF3323125AD69B100620977 /* KFService.swift */,
+			);
+			path = KF;
+			sourceTree = "<group>";
+		};
+		CEF3322125AD5CDC00620977 /* AFN */ = {
+			isa = PBXGroup;
+			children = (
+				CEF3322E25AD699700620977 /* AFNService.swift */,
+			);
+			path = AFN;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,14 +422,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF3322725AD5EC000620977 /* TTAPIService.swift in Sources */,
+				CEF3323225AD69B100620977 /* KFService.swift in Sources */,
+				CEF3322325AD5D3F00620977 /* TTNetwork.swift in Sources */,
+				CEF3324A25AD9F3B00620977 /* TTObject.swift in Sources */,
 				CE76F8C625A55C5E002F6A51 /* TTResponderProtocol.swift in Sources */,
 				CE027D2125ABF86E0041F6D9 /* NSObject+Ext.swift in Sources */,
+				CEF3323E25AD793A00620977 /* TTServiceProtocol.swift in Sources */,
 				CE76F8BC25A47FA0002F6A51 /* TTLabel.swift in Sources */,
 				CE3BFBAA25A3108D00A44B7D /* ViewController.swift in Sources */,
 				CE76F8B925A47F8E002F6A51 /* TTButton.swift in Sources */,
 				CE027CFD25A871BF0041F6D9 /* TTLabelCell.swift in Sources */,
 				CE3BFBA725A3106C00A44B7D /* TTViewController.swift in Sources */,
+				CEF3322F25AD699700620977 /* AFNService.swift in Sources */,
+				CEF3324725AD9ECC00620977 /* TTSecret.swift in Sources */,
 				CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */,
+				CEF3322B25AD688F00620977 /* TTHTTPHelper.swift in Sources */,
 				CE76F8B025A4177E002F6A51 /* TTLoginViewController.swift in Sources */,
 				CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */,
 				CE3BFBA325A3105100A44B7D /* TTWindowController.swift in Sources */,
@@ -363,6 +446,7 @@
 				CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */,
 				CE3BFBB425A31FD800A44B7D /* TTTitleBar.swift in Sources */,
 				CE76F8B325A41856002F6A51 /* TTHomeViewController.swift in Sources */,
+				CEF3323B25AD78C900620977 /* TTNetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
