@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		749171DFA93CC740D1730617 /* Pods_TTProduct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362C117981F0F25BA6287FAE /* Pods_TTProduct.framework */; };
+		CE027CFD25A871BF0041F6D9 /* TTLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE027CFC25A871BF0041F6D9 /* TTLabelCell.swift */; };
+		CE027D2125ABF86E0041F6D9 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE027D2025ABF86E0041F6D9 /* NSObject+Ext.swift */; };
 		CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BFB7E25A30D7200A44B7D /* AppDelegate.swift */; };
 		CE3BFB8325A30D7300A44B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3BFB8225A30D7300A44B7D /* Assets.xcassets */; };
 		CE3BFB8625A30D7300A44B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3BFB8425A30D7300A44B7D /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		1730BADBFD2BF5F1F6B4BA31 /* Pods-TTProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct.release.xcconfig"; path = "Target Support Files/Pods-TTProduct/Pods-TTProduct.release.xcconfig"; sourceTree = "<group>"; };
 		362C117981F0F25BA6287FAE /* Pods_TTProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE027CFC25A871BF0041F6D9 /* TTLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLabelCell.swift; sourceTree = "<group>"; };
+		CE027D2025ABF86E0041F6D9 /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		CE3BFB7B25A30D7200A44B7D /* TTProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3BFB7E25A30D7200A44B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE3BFB8225A30D7300A44B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE027D1F25ABF80A0041F6D9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE027D2025ABF86E0041F6D9 /* NSObject+Ext.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		CE3BFB7225A30D7200A44B7D = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +127,7 @@
 				CE3BFB9525A30EBA00A44B7D /* CUI */,
 				CE3BFB9725A30EBA00A44B7D /* Vendors */,
 				CE3BFB9925A30EBA00A44B7D /* Common */,
-				CE3BFB9825A30EBA00A44B7D /* Categories */,
+				CE027D1F25ABF80A0041F6D9 /* Categories */,
 				CE3BFB9325A30DE800A44B7D /* Tools */,
 				CE3BFB9625A30EBA00A44B7D /* Resource */,
 				CE3BFB8725A30D7300A44B7D /* Info.plist */,
@@ -166,6 +178,7 @@
 				CE76F8C525A55C5E002F6A51 /* TTResponderProtocol.swift */,
 				CE76F8B825A47F8E002F6A51 /* TTButton.swift */,
 				CE76F8BB25A47FA0002F6A51 /* TTLabel.swift */,
+				CE027CFC25A871BF0041F6D9 /* TTLabelCell.swift */,
 			);
 			path = CUI;
 			sourceTree = "<group>";
@@ -183,13 +196,6 @@
 			children = (
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		CE3BFB9825A30EBA00A44B7D /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		CE3BFB9925A30EBA00A44B7D /* Common */ = {
@@ -342,9 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE76F8C625A55C5E002F6A51 /* TTResponderProtocol.swift in Sources */,
+				CE027D2125ABF86E0041F6D9 /* NSObject+Ext.swift in Sources */,
 				CE76F8BC25A47FA0002F6A51 /* TTLabel.swift in Sources */,
 				CE3BFBAA25A3108D00A44B7D /* ViewController.swift in Sources */,
 				CE76F8B925A47F8E002F6A51 /* TTButton.swift in Sources */,
+				CE027CFD25A871BF0041F6D9 /* TTLabelCell.swift in Sources */,
 				CE3BFBA725A3106C00A44B7D /* TTViewController.swift in Sources */,
 				CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */,
 				CE76F8B025A4177E002F6A51 /* TTLoginViewController.swift in Sources */,

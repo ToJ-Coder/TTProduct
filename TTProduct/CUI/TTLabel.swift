@@ -9,7 +9,26 @@ import Cocoa
 
 class TTLabel: NSTextField {
     
-    var tt_backgroundColor: NSColor? {
+    override var cell: NSCell? {
+        set {
+            super.cell = TTLabelCell()
+        }
+        get {
+            return super.cell
+        }
+    }
+    
+    public var tt_text: String {
+        set {
+            stringValue = newValue
+        }
+
+        get {
+            return stringValue
+        }
+    }
+    
+    public var tt_backgroundColor: NSColor? {
         set { backgroundColor = newValue }
         get { return backgroundColor }
     }
@@ -17,14 +36,16 @@ class TTLabel: NSTextField {
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
-        setupMakeInitialize()
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        t_setupMakeInitialize()
     }
     
-    private func setupMakeInitialize() {
-        isBordered = false
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        t_setupMakeInitialize()
+    }
+    
+    private func t_setupMakeInitialize() {
         isEditable = false
         isSelectable = false
         backgroundColor = .clear

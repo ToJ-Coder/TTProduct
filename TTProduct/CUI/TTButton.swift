@@ -28,9 +28,9 @@ class TTButton: NSButton {
     // 鼠标形状
     public var tt_cursor: NSCursor?
     
-    public var tt_selected: Bool = false {
+    var tt_selected: Bool = false {
         didSet {
-            if !tt_selected {
+            if tt_selected {
                 t_insertedStates.insert(.selected)
                 return
             }
@@ -40,7 +40,7 @@ class TTButton: NSButton {
     
     public var tt_enabled: Bool = true {
         didSet {
-            if tt_enabled {
+            if !tt_enabled {
                 t_insertedStates.insert(.disabled)
                 return
             }
@@ -87,7 +87,7 @@ class TTButton: NSButton {
         }
     }
     
-    // 文字是否有删除线
+    /// 文字是否有删除线
     public var tt_lineStyle: TTLineStyle = .normal {
         didSet {
             if .strikethrough == tt_lineStyle {
@@ -96,7 +96,7 @@ class TTButton: NSButton {
             }
             else if .underline == tt_lineStyle {
                 t_titleAttributes[NSAttributedString.Key.strikethroughStyle] = 0
-                t_titleAttributes[NSAttributedString.Key.underlineStyle] = NSUnderlineStyle.single
+                t_titleAttributes[NSAttributedString.Key.underlineStyle] = 1
             }
             else {
                 t_titleAttributes.removeValue(forKey: .strikethroughStyle)
@@ -107,11 +107,9 @@ class TTButton: NSButton {
     }
     
     // 文字的列序
-    public var tt_alignment: NSTextAlignment = .left {
+    public var tt_alignment: NSTextAlignment = .center {
         didSet {
             t_paragraphStyle.alignment = tt_alignment
-            t_titleAttributes[NSAttributedString.Key.paragraphStyle] = t_paragraphStyle
-            
             needsDisplay = true
         }
     }
@@ -120,8 +118,6 @@ class TTButton: NSButton {
     public var tt_lineBreakMode: NSLineBreakMode? {
         didSet {
             t_paragraphStyle.lineBreakMode = .byTruncatingTail
-            t_titleAttributes[NSAttributedString.Key.paragraphStyle] = t_paragraphStyle
-            
             needsDisplay = true
         }
     }
@@ -136,15 +132,7 @@ class TTButton: NSButton {
     // MARK: ReadOnly
     
     // 当前状态
-    private var tt_state: NSControl.TTState  {
-        get {
-            if t_insertedStates.contains(.disabled) { return .disabled }
-            if t_insertedStates.contains(.press) { return .press }
-            if t_insertedStates.contains(.highlighted) { return .highlighted }
-            if t_insertedStates.contains(.selected) { return .selected }
-            return .normal
-        }
-    }
+    private(set) var tt_state: NSControl.TTState = .normal
     private(set) var tt_title: String = ""
     private(set) var tt_titleColor: NSColor? {
         didSet {
@@ -167,14 +155,15 @@ class TTButton: NSButton {
     // 添加的所有状态
     private var t_insertedStates: NSControl.TTState = .normal {
         didSet {
-            setValueToStateAttributes()
+            tt_state = t_currentState()
+            t_setAttributes()
             needsDisplay = true
         }
     }
     
     private lazy var t_paragraphStyle: NSMutableParagraphStyle = {
         let style = NSMutableParagraphStyle()
-        style.alignment = .right
+        style.alignment = .center
         style.lineBreakMode = .byTruncatingMiddle
         
         return style
@@ -198,7 +187,8 @@ class TTButton: NSButton {
         return attributes
     }()
     
-    private lazy var tt_actions: [NSEvent.EventTypeMask: NSMapTable<NSString, AnyObject>] = [:]
+    private lazy var t_maskEvents: [NSEvent.EventTypeMask: NSMapTable<NSString, AnyObject>] = [:]
+    private lazy var t_actions: NSHashTable = NSHashTable<AnyObject>()
     
     // MARK: Cycle
     
@@ -335,14 +325,14 @@ extension TTButton {
     
     // 光标事件
     override func cursorUpdate(with event: NSEvent) {
-        print(className + " : " + #function)
+        // print(className + " : " + #function)
         
         tt_cursor?.set()
     }
     
     private func t_responseEvents(controlEvents: NSEvent.EventTypeMask) {
-        guard let aMap = tt_actions[controlEvents] else { return }
         
+        guard let aMap = t_maskEvents[controlEvents] else { return }
         guard let aTarget = aMap.object(forKey: TTEventKey.target.rawValue) else { return }
         let aAction = aMap.object(forKey: TTEventKey.action.rawValue) as? String ?? ""
         guard aAction.count > 0 else { return }
@@ -354,30 +344,30 @@ extension TTButton {
 extension TTButton {
     public func tt_setTitle(_ title: String?, for state: NSControl.TTState) {
         let aStateAttribute = t_attributeForState(state)
-        aStateAttribute[TTStateKey.title.rawValue] = title
+        aStateAttribute[TTStateKey.title] = title
         
-        t_insertedStates = .normal
+        t_insertedStates.insert(.normal)
     }
     
-    public func tt_setTitleColor(_ color: String?, for state: NSControl.TTState) {
+    public func tt_setTitleColor(_ color: NSColor?, for state: NSControl.TTState) {
         let aStateAttribute = t_attributeForState(state)
-        aStateAttribute[TTStateKey.titleColor.rawValue] = color
+        aStateAttribute[TTStateKey.titleColor] = color
         
-        t_insertedStates = .normal
+        t_insertedStates.insert(.normal)
     }
     
     public func tt_setImage(_ image: NSImage?, for state: NSControl.TTState) {
         let aStateAttribute = t_attributeForState(state)
-        aStateAttribute[TTStateKey.image.rawValue] = image
+        aStateAttribute[TTStateKey.image] = image
         
-        t_insertedStates = .normal
+        t_insertedStates.insert(.normal)
     }
     
     public func tt_setBackgroundImage(_ image: NSImage?, for state: NSControl.TTState) {
         let aStateAttribute = t_attributeForState(state)
-        aStateAttribute[TTStateKey.backgroundImage.rawValue] = image
+        aStateAttribute[TTStateKey.backgroundImage] = image
         
-        t_insertedStates = .normal
+        t_insertedStates.insert(.normal)
     }
     
     private func t_attributeForState(_ state: NSControl.TTState) -> NSMutableDictionary {
@@ -390,7 +380,21 @@ extension TTButton {
         return aStateAttribute
     }
     
-    private func setValueToStateAttributes() {
+    private func t_currentState() -> NSControl.TTState {
+        var aState: TTState = .normal
+        if t_insertedStates.contains(.disabled)
+        { aState = .disabled }
+        else if t_insertedStates.contains(.press)
+        { aState = .press }
+        else if t_insertedStates.contains(.highlighted)
+        { aState = .highlighted }
+        else if t_insertedStates.contains(.selected)
+        { aState = .selected }
+        return aState
+    }
+    
+    // 当前状态对应的值, 如果没有就取nomal
+    private func t_setAttributes() {
         let aState = tt_state
         let aDefAttributes: NSMutableDictionary? = t_stateAttributes[NSControl.TTState.normal]
         
@@ -402,43 +406,47 @@ extension TTButton {
         if (aTitleString == nil && aState != .normal) {
             aTitleString = aDefAttributes?[TTStateKey.title]
         }
-        tt_title = aTitleString as AnyObject as? String ?? ""
+        tt_title = aTitleString as? String ?? ""
         
         var aStateColor = aStateAttribute?[TTStateKey.titleColor]
         if (aStateColor == nil && aState != .normal) {
             aStateColor = aDefAttributes?[TTStateKey.titleColor]
         }
-        tt_titleColor = aStateColor as AnyObject as? NSColor
+        tt_titleColor = aStateColor as? NSColor
         
         var aStateImage = aStateAttribute?[TTStateKey.image]
         if (aStateImage == nil && aState != .normal) {
             aStateImage = aDefAttributes?[TTStateKey.image]
         }
-        tt_image = aStateImage as AnyObject as? NSImage
+        tt_image = aStateImage as? NSImage
         
         var aStateBackgroundImage = aStateAttribute?[TTStateKey.backgroundImage]
         if (aStateBackgroundImage == nil && aState != .normal) {
             aStateBackgroundImage = aDefAttributes?[TTStateKey.backgroundImage]
         }
-        tt_backgroundImage = aStateBackgroundImage as AnyObject as? NSImage
+        tt_backgroundImage = aStateBackgroundImage as? NSImage
     }
 }
 
-// MARK: - Class implementation TTResponderProtocol
+// MARK: - Class implementation Public Function
+// MARK: TTResponderProtocol
 extension TTButton: TTResponderProtocol {
     
     public func tt_addTarget(_ target:  AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask) {
         
         let aMap = NSMapTable<NSString, AnyObject>.strongToWeakObjects()
         aMap.setObject(target, forKey: TTEventKey.target.rawValue)
-        let aAction = NSStringFromSelector(action) as NSString
+        let aAction = NSString(string: String(_sel: action))
         aMap.setObject(aAction, forKey: TTEventKey.action.rawValue)
         
-        tt_actions[controlEvents] = aMap
+        t_actions.add(aAction)
+        t_maskEvents[controlEvents] = aMap
     }
     
-    public func tt_removeTarget(_ target: AnyObject?, action: Selector?, for controlEvents: NSEvent.EventTypeMask) {
-        tt_actions.removeValue(forKey: controlEvents)
+    public func tt_removeTarget(_ target: AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask) {
+        t_maskEvents.removeValue(forKey: controlEvents)
+        let aAction = NSString(string: String(_sel: action))
+        t_actions.remove(aAction)
     }
 }
 
@@ -478,7 +486,7 @@ extension TTButton {
         var aImageWidth: CGFloat  = 0
         var aImageHeight: CGFloat = 0
         
-        // image size
+        // image size 太大等比例缩放
         if let aImage = tt_image {
             let aImageVWidth  = aImage.size.width
             let aImageVHeight = aImage.size.height
@@ -488,7 +496,7 @@ extension TTButton {
                 aImageWidth = aContentWidth
                 aImageHeight = aImageWidth * aImageVHeight / aImageVWidth
             }
-            
+ 
             if  aImageHeight > aContentHeight {
                 aImageHeight = aContentHeight
                 aImageWidth = aImageHeight * aImageVWidth / aImageVHeight
@@ -595,12 +603,12 @@ extension TTButton {
 extension TTButton {
     
     private func t_setupMakeInitialize() {
-        title = ""
+        cell = nil
         focusRingType = .none
         cell?.isBordered = false
         cell?.isHighlighted = false
         tt_backgroundColor = .clear
-        tt_titleFont = NSFont.systemFont(ofSize: 15)
+        tt_titleFont = font
     }
 }
 

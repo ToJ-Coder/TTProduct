@@ -15,9 +15,11 @@ import Cocoa
     /// - parameter controlEvents: 一个位码, 特指行为触发事件, see NSEvent.EventTypeMask.
     ///
     /// - 您可以多次调用此方法来为控件配置多个目标和操作
-    @objc optional func tt_addTarget(_ target: AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask)
+    @objc optional
+    func tt_addTarget(_ target: AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask)
     
-    @objc optional func tt_removeTarget(_ target: AnyObject?, action: Selector?, for controlEvents: NSEvent.EventTypeMask)
+    @objc optional
+    func tt_removeTarget(_ target: AnyObject?, action: Selector, for controlEvents: NSEvent.EventTypeMask)
 }
 
 private enum TTControlState: NSInteger {
@@ -59,6 +61,11 @@ extension NSControl {
         public static var selected: NSControl.TTState { return TTState(rawValue: 1<<4) }
     }
 }
+
+extension NSObject {
+    var tt: Self { return self }
+}
+
 /*
  //
  //  TTButton.swift

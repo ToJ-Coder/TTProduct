@@ -15,10 +15,10 @@ class AppDelegate: NSObject {
 }
 
 extension AppDelegate: NSApplicationDelegate {
-    
+
     // 默认通知中心在应用程序对象初始化之前立即发送。
     func applicationWillFinishLaunching(_ notification: Notification) {
-        
+
     }
     
     // 默认的通知中心在应用程序启动和初始化之后但收到第一个事件之前发送。
@@ -53,8 +53,8 @@ extension AppDelegate {
     }
     
     private func setupMakeWindow() -> NSWindow {
-        //let vc = ViewController()
-        let vc = TTHomeViewController()
+        let vc = ViewController()
+//        let vc = TTHomeViewController()
         
         let window = TTWindow(contentViewController: vc)
        
