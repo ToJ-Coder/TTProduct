@@ -5,7 +5,12 @@
 //  Created by Toj on 1/12/21.
 //
 
+#if os(macOS)
 import Cocoa
+#else
+import UIKit
+#endif
+
 import AFNetworking
 
 class AFNService: TTNetworkService {
@@ -32,18 +37,18 @@ class AFNService: TTNetworkService {
         AFNetworkReachabilityManager.shared().startMonitoring()
     }
     
-    override func post<Key, Value>(url path: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
+    override func post<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
         
-        manager.post(path, parameters: parameters, headers: nil, progress: nil) { (task, response) in
+        manager.post(url, parameters: parameters, headers: nil, progress: nil) { (task, response) in
             success?(response)
         } failure: { (task, error) in
             failure?(error)
         }
     }
     
-    override func get<Key, Value>(url path: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
+    override func get<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
         
-        manager.get(path, parameters: parameters, headers: headers, progress: nil) { (task, response) in
+        manager.get(url, parameters: parameters, headers: headers, progress: nil) { (task, response) in
             success?(response)
         } failure: { (task, error) in
             failure?(error)

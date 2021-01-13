@@ -6,11 +6,12 @@
 //
 
 import Cocoa
+import KakaJSON
 
-//class TTSecret: TTObject {
-//    var name  = ""
-//}
+class TTSecret: TTObject {
+   
+}
 
-class TTCar: TTObject {
+struct TTCar: Convertible {
     var name  = "fghj"
 }

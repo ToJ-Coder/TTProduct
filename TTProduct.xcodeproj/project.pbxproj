@@ -24,6 +24,8 @@
 		CE76F8BC25A47FA0002F6A51 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8BB25A47FA0002F6A51 /* TTLabel.swift */; };
 		CE76F8C625A55C5E002F6A51 /* TTResponderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8C525A55C5E002F6A51 /* TTResponderProtocol.swift */; };
 		CE76F8C925A565CE002F6A51 /* Documentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76F8C825A565CE002F6A51 /* Documentation.swift */; };
+		CE96E9F025AEE3D800268FF4 /* TTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96E9EF25AEE3D800268FF4 /* TTResponse.swift */; };
+		CE96E9F325AEF2B100268FF4 /* TTPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96E9F225AEF2B100268FF4 /* TTPersistence.swift */; };
 		CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511525A83D5500C5A618 /* CodeComment.swift */; };
 		CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511B25A83DC500C5A618 /* CodeSegment.swift */; };
 		CEF3322325AD5D3F00620977 /* TTNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322225AD5D3F00620977 /* TTNetwork.swift */; };
@@ -59,6 +61,8 @@
 		CE76F8BB25A47FA0002F6A51 /* TTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
 		CE76F8C525A55C5E002F6A51 /* TTResponderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTResponderProtocol.swift; sourceTree = "<group>"; };
 		CE76F8C825A565CE002F6A51 /* Documentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documentation.swift; sourceTree = "<group>"; };
+		CE96E9EF25AEE3D800268FF4 /* TTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTResponse.swift; sourceTree = "<group>"; };
+		CE96E9F225AEF2B100268FF4 /* TTPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPersistence.swift; sourceTree = "<group>"; };
 		CEE1511525A83D5500C5A618 /* CodeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeComment.swift; sourceTree = "<group>"; };
 		CEE1511B25A83DC500C5A618 /* CodeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSegment.swift; sourceTree = "<group>"; };
 		CEF3322225AD5D3F00620977 /* TTNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTNetwork.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				CE3BFB9E25A3103B00A44B7D /* TTWindow.swift */,
 				CE3BFBB325A31FD800A44B7D /* TTTitleBar.swift */,
 				CE3BFBA625A3106C00A44B7D /* TTViewController.swift */,
+				CE96E9F225AEF2B100268FF4 /* TTPersistence.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				CEF3322225AD5D3F00620977 /* TTNetwork.swift */,
 				CEF3322625AD5EC000620977 /* TTAPIService.swift */,
+				CE96E9EF25AEE3D800268FF4 /* TTResponse.swift */,
 				CEF3322A25AD688F00620977 /* TTHTTPHelper.swift */,
 				CEF3323D25AD793A00620977 /* TTServiceProtocol.swift */,
 				CEF3323A25AD78C900620977 /* TTNetworkService.swift */,
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE96E9F025AEE3D800268FF4 /* TTResponse.swift in Sources */,
 				CEF3322725AD5EC000620977 /* TTAPIService.swift in Sources */,
 				CEF3323225AD69B100620977 /* KFService.swift in Sources */,
 				CEF3322325AD5D3F00620977 /* TTNetwork.swift in Sources */,
@@ -435,6 +442,7 @@
 				CE027CFD25A871BF0041F6D9 /* TTLabelCell.swift in Sources */,
 				CE3BFBA725A3106C00A44B7D /* TTViewController.swift in Sources */,
 				CEF3322F25AD699700620977 /* AFNService.swift in Sources */,
+				CE96E9F325AEF2B100268FF4 /* TTPersistence.swift in Sources */,
 				CEF3324725AD9ECC00620977 /* TTSecret.swift in Sources */,
 				CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */,
 				CEF3322B25AD688F00620977 /* TTHTTPHelper.swift in Sources */,

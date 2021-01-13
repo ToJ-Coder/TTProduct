@@ -5,40 +5,47 @@
 //  Created by Toj on 1/12/21.
 //
 
-import Cocoa
+import Foundation
 import KakaJSON
 
 public class TTHTTPHelper: NSObject {
     
     public static let shared = TTHTTPHelper()
-     
-    private lazy var server: TTNetworkService = AFNService.shared
-//    private lazy var server: TTNetworkService = KFService.shared
     
-    func request<T>(url: TTNetwork.API, type: TTHTTPRequestType, hearders:[String: String]?, parameters:[String: Any]?, t:T, success: ((_ t:T?)->())?, failure: ((Error)->())?) where T: Convertible {
+    private lazy var server: TTNetworkService = AFNService.shared
+    //    private lazy var server: TTNetworkService = KFService.shared
+    
+    func request<T:Convertible>(api: TTNetwork.API,
+                                model:T.Type,
+                                type: TTHTTPRequestType = .post,
+                                hearders:TTNetwork.Header? = nil,
+                                parameters:[String: Any]? = nil,
+                                completion: ((_ t:TTResponse<T>?)->())?) {
         
+        let url = TTNetwork.API.base + api.rawValue
         let aHearders = hearders == nil ? headerParameters : hearders
         var allParameters:[String: Any] = parameters ?? [:]
+        allParameters.t_merge(dict: fixedParameters)
         
-        allParameters.merge(dict: fixedParameters)
-        
-        let urlString = TTNetwork.API.base + "/api" + url.rawValue
-        print(allParameters)
-        server.request(url: urlString, type: type, headers: aHearders, parameters: allParameters) { (response) in
-         
-            var model: T?
+        server.request(string: url, request: type, headers: aHearders?.rawValue, parameters: allParameters)
+        { (response) in
+            
+            var rModel:TTResponse<T>?
             if let json = response as? Dictionary<String, Any> {
-              
-                model = json.kj.model(T.self) 
-                
+                rModel = json.kj.model(TTResponse<T>.self)
             }
-            success?(model)
+            completion?(rModel)
         } failure: { (error) in
             
+            let aError = error as NSError
+            let rModel:TTResponse<T> = TTResponse<T>.init()
+            rModel.code = .timeout
+            rModel.message = aError.description
+            completion?(rModel)
         }
     }
     
-    private var headerParameters: [String: String] {
+    private var headerParameters: TTNetwork.Header {
         return TTNetwork.Header.general
     }
     
@@ -49,7 +56,7 @@ public class TTHTTPHelper: NSObject {
 
 extension Dictionary {
     
-    mutating func merge(dict: Dictionary<Key,Value>) {
+    fileprivate mutating func t_merge(dict: Dictionary<Key,Value>) {
         for (key, value) in dict {
             self[key] = value
         }

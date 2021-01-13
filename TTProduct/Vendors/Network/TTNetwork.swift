@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct TTNetwork {
-}
+struct TTNetwork { }
 
 extension TTNetwork {
     
@@ -16,7 +15,7 @@ extension TTNetwork {
         
         public var rawValue: String
         
-        static var base: String = "http://api-test.vipcode.com"
+        static var base: String = "http://api-test.vipcode.com/api"
         
         public static var secret: TTNetwork.API {
             return API(rawValue: "/user/secret")
@@ -32,14 +31,18 @@ extension TTNetwork {
     
     struct Header {
         
-        static var secret: [String : String] = ["Content-Type" : "application/json",
-                                                "appKey" : "88F0373F94FD3EA7607F886D5EA27621"]
+        public var rawValue: [String:String]
         
-        static var general: [String : String] = ["Content-Type" : "application/json",
-                                                 "OS" : "2",
-                                                 "token" : "",
-                                                 "secret" : "",
-                                                 "version" : ""]
+        static var secret: TTNetwork.Header = Header(
+            rawValue: ["Content-Type": "application/json",
+                       "appKey": "88F0373F94FD3EA7607F886D5EA27621"])
+        
+        static var general: TTNetwork.Header = Header(
+            rawValue: ["Content-Type" : "application/json",
+                       "OS" : "2",
+                       "token" : "",
+                       "secret" : "",
+                       "version" : ""])
     }
 }
 
