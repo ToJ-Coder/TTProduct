@@ -15,14 +15,14 @@ public class TTHTTPHelper: NSObject {
     private lazy var server: TTNetworkService = AFNService.shared
     //    private lazy var server: TTNetworkService = KFService.shared
     
-    func request<T:Convertible>(api: TTNetwork.API,
+    func request<T:Convertible>(api: TTRequest.API,
                                 model:T.Type,
                                 type: TTHTTPRequestType = .post,
-                                hearders:TTNetwork.Header? = nil,
+                                hearders:TTRequest.Header? = nil,
                                 parameters:[String: Any]? = nil,
-                                completion: ((_ t:TTResponse<T>?)->())?) {
+                                completion: ((_ t:TTResponse<T>)->())?) {
         
-        let url = TTNetwork.API.base + api.rawValue
+        let url = TTRequest.API.base + api.rawValue
         let aHearders = hearders == nil ? headerParameters : hearders
         var allParameters:[String: Any] = parameters ?? [:]
         allParameters.t_merge(dict: fixedParameters)
@@ -30,10 +30,13 @@ public class TTHTTPHelper: NSObject {
         server.request(string: url, request: type, headers: aHearders?.rawValue, parameters: allParameters)
         { (response) in
             
-            var rModel:TTResponse<T>?
             if let json = response as? Dictionary<String, Any> {
-                rModel = json.kj.model(TTResponse<T>.self)
+               let rModel = json.kj.model(TTResponse<T>.self)
+                completion?(rModel)
+                return
             }
+            
+            let rModel:TTResponse<T> = TTResponse<T>()
             completion?(rModel)
         } failure: { (error) in
             
@@ -45,12 +48,12 @@ public class TTHTTPHelper: NSObject {
         }
     }
     
-    private var headerParameters: TTNetwork.Header {
-        return TTNetwork.Header.general
+    private var headerParameters: TTRequest.Header {
+        return TTRequest.Header.general
     }
     
     private var fixedParameters: [String: Any] {
-        return TTNetwork.Parameters.base
+        return TTRequest.Parameters.base
     }
 }
 

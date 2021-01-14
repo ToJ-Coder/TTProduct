@@ -44,11 +44,7 @@ class TTHomeViewController: TTViewController {
    
     @objc private func didTapTest() {
         print(className + " : " + #function)
-        TTAPIService.Request.secret { (response) in
-            let code = response?.code ?? .failed
-            print(code)
-            print(response?.data ?? "")
-        }
+        
     }
     
     @objc private func didTapTest2() {
@@ -66,5 +62,33 @@ class TTHomeViewController: TTViewController {
             window.close()
         }
         return true
+    }
+}
+
+extension TTHomeViewController: TTPersistence {
+    
+    private func requestSecret() {
+        TTAPIService.Request.secret {  [weak self] (response)  in
+            if let appSecret = response.data {
+                self?.save(appSecret: appSecret)
+                self?.requestLogin()
+                return
+            }
+        }
+    }
+    
+    private func requestLogin() {
+        let account = "13800000001"
+        let password = "000001"
+        let pwdMD5Second = password.md5.md5
+        let signature = (account + pwdMD5Second).md5.md5
+        
+        var parameters = [String : Any]()
+        parameters["signature"] = signature
+        parameters["phoneNum"] = account
+        parameters["appKey"] = "88F0373F94FD3EA7607F886D5EA27621"
+        TTAPIService.Request.login(parameters: parameters) { (response) in
+            
+        }
     }
 }

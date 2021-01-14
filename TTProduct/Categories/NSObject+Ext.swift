@@ -9,6 +9,8 @@ import AppKit
 
 extension NSObject {
     
+    #if DEBUG
+    
     class func tt_propertyList() -> [String] {
         var ptyList: [String] = []
         
@@ -61,4 +63,6 @@ extension NSObject {
         free(list)
         return ptyList
     }
+    
+    #endif
 }

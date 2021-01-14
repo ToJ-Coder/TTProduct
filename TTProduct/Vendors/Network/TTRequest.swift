@@ -1,15 +1,14 @@
 //
-//  TTNetwork.swift
+//  TTRequest.swift
 //  TTProduct
 //
-//  Created by Toj on 1/12/21.
+//  Created by Toj on 1/14/21.
 //
 
-import Foundation
+import Cocoa
 
-struct TTNetwork { }
-
-extension TTNetwork {
+struct TTRequest { }
+extension TTRequest {
     
     struct API : Hashable, Equatable, RawRepresentable {
         
@@ -17,28 +16,29 @@ extension TTNetwork {
         
         static var base: String = "http://api-test.vipcode.com/api"
         
-        public static var secret: TTNetwork.API {
+        public static var secret: API {
             return API(rawValue: "/user/secret")
         }
         
-        public static var log: TTNetwork.API {
+        public static var login: API {
             return API(rawValue: "/user/login")
         }
     }
 }
 
-extension TTNetwork {
+extension TTRequest {
     
     struct Header {
         
         public var rawValue: [String:String]
         
-        static var secret: TTNetwork.Header = Header(
+        static var secret: TTRequest.Header = Header(
             rawValue: ["Content-Type": "application/json",
                        "appKey": "88F0373F94FD3EA7607F886D5EA27621"])
         
-        static var general: TTNetwork.Header = Header(
+        static var general: TTRequest.Header = Header(
             rawValue: ["Content-Type" : "application/json",
+                       "os" : "2",
                        "OS" : "2",
                        "token" : "",
                        "secret" : "",
@@ -46,7 +46,7 @@ extension TTNetwork {
     }
 }
 
-extension TTNetwork {
+extension TTRequest {
     
     struct Parameters {
         
