@@ -8,21 +8,22 @@
 import Foundation
 
 class TTNetworkService: NSObject, TTNetworkProtocol {
+    var timeoutInterval: TimeInterval { return 15 }
     
-    func request(string url:String, request type: TTHTTPRequestType, headers:[String: String]?, parameters:[String: Any]?, success: ((Any?)->())?, failure: ((Error)->())?) {
+    func request(url urlString:String, request type: TTHTTPRequestType, headers:[String: String]?, parameters:[String: Any]?, success: ((Any?)->())?, failure: ((Error)->())?)  {
         
         if type == .post {
-            post(string: url, headers: headers, parameters:parameters , success: success, failure: failure)
+            post(url: urlString, headers: headers, parameters:parameters , success: success, failure: failure)
             return
         }
         
         if type == .get {
-            get(string: url, headers: headers, parameters:parameters , success: success, failure: failure)
+            get(url: urlString, headers: headers, parameters:parameters , success: success, failure: failure)
             return
         }
     }
     
-    func post<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable { }
+    func get<Key, Value>(url urlString: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key: Hashable { }
     
-    func get<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable { }
+    func post<Key, Value>(url urlString: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key: Hashable { }
 }

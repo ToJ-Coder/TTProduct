@@ -8,7 +8,8 @@
 import Cocoa
 import KakaJSON
 
-class TTObject: NSObject {
+class TTObject : NSObject {
+
     deinit {
         print(className + " : " + #function )
     }

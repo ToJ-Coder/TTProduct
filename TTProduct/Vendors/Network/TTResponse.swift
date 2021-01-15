@@ -7,11 +7,12 @@
 
 import Foundation
 import KakaJSON
+import HandyJSON
 
 class TTResponse<Element>: NSObject {
     var code: Code = .failed
     let data: Element? = nil
-    var message = "数据异常, 请联系官方人员"
+    var message = ""
     var traceId = ""
     
     deinit {
@@ -24,6 +25,7 @@ extension TTResponse {
         // 服务器返回
         case success = 0
         case failed   = 1
+        case parametersFailed = 400
         
         // NSError code
         case unknown   = -1
@@ -60,7 +62,15 @@ extension TTResponse {
     }
 }
 
-extension String: Convertible { }
-extension Array: Convertible { }
-extension Dictionary: Convertible { }
-extension NSObject: Convertible { }
+#if DEBUG
+typealias Object = TTObject
+#else
+typealias Object = NSObject
+#endif
+
+protocol TTJSONCodable: HandyJSON { }
+
+extension NSObject:   TTJSONCodable { }
+extension String:     TTJSONCodable { }
+extension Array:      TTJSONCodable { }
+extension Dictionary: TTJSONCodable { }

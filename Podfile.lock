@@ -12,25 +12,33 @@ PODS:
   - AFNetworking/Reachability (4.0.1)
   - AFNetworking/Security (4.0.1)
   - AFNetworking/Serialization (4.0.1)
+  - Alamofire (5.4.1)
+  - HandyJSON (5.0.2)
   - KakaJSON (1.1.2)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire
+  - HandyJSON
   - KakaJSON
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Alamofire
+    - HandyJSON
     - KakaJSON
     - SnapKit
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 5cb627496c62f6e1612c2e39ff63010dac429375
+PODFILE CHECKSUM: f8f10d215bb9dd6d0d31effbf5f27a42e9bf9ada
 
 COCOAPODS: 1.10.0.beta.2

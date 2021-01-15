@@ -7,13 +7,10 @@
 
 import Cocoa
 
-#if DEBUG
-typealias Object = TTObject
-#else
-typealias Object = NSObject
-#endif
-
 class TTLoginModel: Object {
 
-
+    var token = ""
+    var secret = ""
+    var refreshToken = ""
+    var refreshSecret = ""
 }

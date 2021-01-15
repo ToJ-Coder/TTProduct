@@ -20,12 +20,19 @@ extension TTAPIService {
                         type:TTHTTPRequestType = .post,
                         hearders:TTRequest.Header? = nil,
                         parameters:[String: Any]? = nil,
+                        prepare execute:(()->())? = nil,
                         completion:((_ response:TTResponse<T>)->())?)
-        where T: Convertible {
+        where T: TTJSONCodable {
             
             TTHTTPHelper.shared.request(api:url, model: model, hearders: hearders, parameters: parameters) { (response) in
                 
                 // + alert 错误/异常弹框
+                if response.data == nil {
+                    // alert
+                    if response.message.count == 0 {
+                        response.message = "数据异常, 请联系官方人员"
+                    }
+                }
                 completion?(response)
             }
         }
@@ -36,10 +43,17 @@ extension TTAPIService {
         }
         
         static
-        func login(parameters:[String: Any]? = nil,
+        func login(_ parameters:[String: Any]? = nil,
                    completion:((_ response:TTResponse<TTLoginModel>)->())?) {
             
-            general(api: .login, model: TTLoginModel.self, hearders: .secret, completion: completion)
+            general(api: .login, model: TTLoginModel.self, parameters: parameters, completion: completion)
+        }
+        
+        static
+        func works(_ parameters:[String: Any]? = nil,
+                   completion:((_ response:TTResponse<TTWork>)->())?) {
+            
+            general(api: .works, model: TTWork.self, parameters: parameters, completion: completion)
         }
     }
 }

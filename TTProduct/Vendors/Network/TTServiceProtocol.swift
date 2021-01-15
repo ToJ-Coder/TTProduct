@@ -13,8 +13,9 @@ enum TTHTTPRequestType {
 }
 
 protocol TTNetworkProtocol: NSObjectProtocol {
+    var timeoutInterval: TimeInterval { get }
     
-    func post<Key,Value>(string url:String, headers:[String: String]?, parameters:Dictionary<Key,Value>?, success: ((Any?)->())?, failure: ((Error)->())?)
+    func get<Key,Value>(url urlString:String, headers:[String: String]?, parameters:Dictionary<Key,Value>?, success: ((Any?)->())?, failure: ((Error)->())?) where Key: Hashable
     
-    func get<Key,Value>(string url:String, headers:[String: String]?, parameters:Dictionary<Key,Value>?, success: ((Any?)->())?, failure: ((Error)->())?)
+    func post<Key,Value>(url urlString:String, headers:[String: String]?, parameters:Dictionary<Key,Value>?, success: ((Any?)->())?, failure: ((Error)->())?) where Key: Hashable
 }

@@ -6,44 +6,53 @@
 //
 
 import Foundation
-import KakaJSON
+import HandyJSON
 
 public class TTHTTPHelper: NSObject {
     
     public static let shared = TTHTTPHelper()
+    var prepareExecute:(()->())?
     
     private lazy var server: TTNetworkService = AFNService.shared
-    //    private lazy var server: TTNetworkService = KFService.shared
+//    private lazy var server: TTNetworkService = AFService.shared
     
-    func request<T:Convertible>(api: TTRequest.API,
-                                model:T.Type,
-                                type: TTHTTPRequestType = .post,
-                                hearders:TTRequest.Header? = nil,
-                                parameters:[String: Any]? = nil,
-                                completion: ((_ t:TTResponse<T>)->())?) {
+    func request<T: TTJSONCodable>(api: TTRequest.API,
+                                 model:T.Type,
+                                 type: TTHTTPRequestType = .post,
+                                 hearders:TTRequest.Header? = nil,
+                                 parameters:[String: Any]? = nil,
+                                 prepare execute:(()->())? = nil,
+                                 completion: ((_ t:TTResponse<T>)->())?) {
         
+        let aPrepare = execute ?? prepareExecute
+        aPrepare?()
         let url = TTRequest.API.base + api.rawValue
         let aHearders = hearders == nil ? headerParameters : hearders
         var allParameters:[String: Any] = parameters ?? [:]
         allParameters.t_merge(dict: fixedParameters)
-        
-        server.request(string: url, request: type, headers: aHearders?.rawValue, parameters: allParameters)
+     
+        server.request(url: url, request: type, headers: aHearders?.rawValue, parameters: allParameters)
         { (response) in
             
             if let json = response as? Dictionary<String, Any> {
-               let rModel = json.kj.model(TTResponse<T>.self)
-                completion?(rModel)
-                return
+                
+                // let rModel = TTResponse<T>.tt_model(json:json)
+                // let rModel = json.kj.model(TTResponse<T>.self)
+                if let rModel =  JSONDeserializer<TTResponse<T>>.deserializeFrom(dict: json) {
+                    completion?(rModel)
+                    return
+                }
             }
             
             let rModel:TTResponse<T> = TTResponse<T>()
+            rModel.message = "数据异常, 请联系官方人员"
             completion?(rModel)
         } failure: { (error) in
             
             let aError = error as NSError
             let rModel:TTResponse<T> = TTResponse<T>.init()
             rModel.code = .timeout
-            rModel.message = aError.description
+            rModel.message = aError.domain
             completion?(rModel)
         }
     }
@@ -56,6 +65,14 @@ public class TTHTTPHelper: NSObject {
         return TTRequest.Parameters.base
     }
 }
+
+extension TTHTTPHelper {
+    
+    func prepareExecute(prepare:@escaping (()->())) {
+        prepareExecute = prepare
+    }
+}
+
 
 extension Dictionary {
     

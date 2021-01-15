@@ -7,42 +7,58 @@
 
 import Cocoa
 
-struct TTRequest { }
+public struct TTRequest { }
+
 extension TTRequest {
     
     struct API : Hashable, Equatable, RawRepresentable {
         
         public var rawValue: String
         
+        #if DEBUG
         static var base: String = "http://api-test.vipcode.com/api"
+        #else
+        static var base: String = "http://api.vipcode.com/api"
+        #endif
         
-        public static var secret: API {
+        public static var secret: TTRequest.API {
             return API(rawValue: "/user/secret")
         }
         
-        public static var login: API {
+        public static var login: TTRequest.API {
             return API(rawValue: "/user/login")
+        }
+        
+        public static var works: TTRequest.API {
+            return API(rawValue: "/pad/course/works/pageQueryStudentWork")
         }
     }
 }
 
 extension TTRequest {
     
-    struct Header {
+    struct Header: TTPersistence {
         
         public var rawValue: [String:String]
         
-        static var secret: TTRequest.Header = Header(
-            rawValue: ["Content-Type": "application/json",
-                       "appKey": "88F0373F94FD3EA7607F886D5EA27621"])
+        static var secret: Header =
+            Header(rawValue:
+                    ["Content-Type": "application/json",
+                     "appKey": "1b5332a95b4943df9d83dbd1f3dd3c9f"])
         
-        static var general: TTRequest.Header = Header(
-            rawValue: ["Content-Type" : "application/json",
-                       "os" : "2",
-                       "OS" : "2",
-                       "token" : "",
-                       "secret" : "",
-                       "version" : ""])
+        static var general: Header =
+            Header(rawValue:
+                    ["Content-Type" : "application/json",
+                     "os" : "2",
+                     "version" : "1.0.0"]).fixHeaders()
+        
+        private func fixHeaders() -> Header {
+            var header = rawValue
+            header["token"] = token
+            header["secret"] = secret
+            
+            return Header(rawValue: header)
+        }
     }
 }
 

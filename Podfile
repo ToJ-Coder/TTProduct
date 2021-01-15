@@ -7,6 +7,8 @@ use_frameworks!
 target 'TTProduct' do
 
      pod 'SnapKit'
+     pod 'KakaJSON'
      pod 'AFNetworking'
-     pod "KakaJSON"
+     pod 'Alamofire'
+     pod 'HandyJSON'
 end

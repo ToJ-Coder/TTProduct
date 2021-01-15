@@ -22,33 +22,36 @@ class AFNService: TTNetworkService {
     private override init() {
         super.init()
         
-        // 请求序列化类型 AFHTTPRequestSerializer / AFJSONRequestSerializer
+        // 请求编码格式
+        // AFHTTPRequestSerializer / AFJSONRequestSerializer
         manager.requestSerializer = AFJSONRequestSerializer()
-        // 响应结果序列化类型 AFHTTPResponseSerializer / AFJSONResponseSerializer
+        
+        // 响应编码格式
+        // AFHTTPResponseSerializer / AFJSONResponseSerializer
         manager.responseSerializer = AFJSONResponseSerializer()
         
         // 安全策略
         manager.securityPolicy = AFSecurityPolicy(pinningMode: .none)
         
         // 请求超时时间
-        manager.requestSerializer.timeoutInterval = 15
+        manager.requestSerializer.timeoutInterval = timeoutInterval
         
         // 网络状态
         AFNetworkReachabilityManager.shared().startMonitoring()
     }
     
-    override func post<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
+    override func get<Key, Value>(url urlString: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key: Hashable {
         
-        manager.post(url, parameters: parameters, headers: nil, progress: nil) { (task, response) in
+        manager.get(urlString, parameters: parameters, headers: headers, progress: nil) { (task, response) in
             success?(response)
         } failure: { (task, error) in
             failure?(error)
         }
     }
     
-    override func get<Key, Value>(string url: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key : Hashable {
+    override func post<Key, Value>(url urlString: String, headers: [String : String]?, parameters: Dictionary<Key, Value>?, success: ((Any?) -> ())?, failure: ((Error) -> ())?) where Key: Hashable {
         
-        manager.get(url, parameters: parameters, headers: headers, progress: nil) { (task, response) in
+        manager.post(urlString, parameters: parameters, headers: headers, progress: nil) { (task, response) in
             success?(response)
         } failure: { (task, error) in
             failure?(error)
