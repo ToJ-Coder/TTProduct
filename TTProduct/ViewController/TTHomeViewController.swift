@@ -32,7 +32,7 @@ class TTHomeViewController: TTViewController {
         
         let button = TTButton()
         b = button
-        button.tt_backgroundColor = .gray
+        button.tt_backgroundColor = TTColor(hexColor: "112342")
         
         button.tt_selected = true
         button.tt_setTitle("Python", for: .normal)

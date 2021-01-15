@@ -6,9 +6,11 @@
 //  基本类型强制类型转换
 //
 
-#if !TARGET_OS_IPHONE
-import AppKit
-#else
+#if canImport(Cocoa)
+import Cocoa
+#endif
+
+#if canImport(UIKit)
 import UIKit
 #endif
 
@@ -205,6 +207,12 @@ extension ExtInt where Self : BinaryInteger {
     
     var tt_toFloat80: Float80 {
         return Float80(self)
+    }
+    
+    var tt_timeString: String {
+        let value = Int(self)
+        let timeStr = String(format: "%02dmin:%02ds", value / 60, value % 60)
+        return timeStr
     }
 }
 

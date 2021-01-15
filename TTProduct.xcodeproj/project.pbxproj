@@ -37,6 +37,8 @@
 		CEA5116F25B13BAD00D5A724 /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5116E25B13BAD00D5A724 /* AFService.swift */; };
 		CEA5117425B1666E00D5A724 /* TTCustomConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5117325B1666E00D5A724 /* TTCustomConvertible.swift */; };
 		CEA5117925B1669D00D5A724 /* TTModelConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5117825B1669D00D5A724 /* TTModelConvertible.swift */; };
+		CEA5118A25B194D300D5A724 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5118925B194D300D5A724 /* Color+Ex.swift */; };
+		CEA5119725B1A5C600D5A724 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5119625B1A5C600D5A724 /* Font+Ex.swift */; };
 		CEE1511625A83D5500C5A618 /* CodeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511525A83D5500C5A618 /* CodeComment.swift */; };
 		CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE1511B25A83DC500C5A618 /* CodeSegment.swift */; };
 		CEF3322725AD5EC000620977 /* TTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3322625AD5EC000620977 /* TTAPIService.swift */; };
@@ -82,6 +84,8 @@
 		CEA5116E25B13BAD00D5A724 /* AFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFService.swift; sourceTree = "<group>"; };
 		CEA5117325B1666E00D5A724 /* TTCustomConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCustomConvertible.swift; sourceTree = "<group>"; };
 		CEA5117825B1669D00D5A724 /* TTModelConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTModelConvertible.swift; sourceTree = "<group>"; };
+		CEA5118925B194D300D5A724 /* Color+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		CEA5119625B1A5C600D5A724 /* Font+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
 		CEE1511525A83D5500C5A618 /* CodeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeComment.swift; sourceTree = "<group>"; };
 		CEE1511B25A83DC500C5A618 /* CodeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSegment.swift; sourceTree = "<group>"; };
 		CEF3322625AD5EC000620977 /* TTAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAPIService.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			children = (
 				CE027D2025ABF86E0041F6D9 /* NSObject+Ext.swift */,
 				CEA5115125B019AB00D5A724 /* Striing+Ext.swift */,
+				CEA5118925B194D300D5A724 /* Color+Ex.swift */,
+				CEA5119625B1A5C600D5A724 /* Font+Ex.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				CEF3323E25AD793A00620977 /* TTServiceProtocol.swift in Sources */,
 				CE76F8BC25A47FA0002F6A51 /* TTLabel.swift in Sources */,
 				CE3BFBAA25A3108D00A44B7D /* ViewController.swift in Sources */,
+				CEA5119725B1A5C600D5A724 /* Font+Ex.swift in Sources */,
 				CE76F8B925A47F8E002F6A51 /* TTButton.swift in Sources */,
 				CE027CFD25A871BF0041F6D9 /* TTLabelCell.swift in Sources */,
 				CEA5115525B01F6100D5A724 /* TTOperator.swift in Sources */,
@@ -474,6 +481,7 @@
 				CE3BFB7F25A30D7200A44B7D /* AppDelegate.swift in Sources */,
 				CEA5115225B019AB00D5A724 /* Striing+Ext.swift in Sources */,
 				CEF3322B25AD688F00620977 /* TTHTTPHelper.swift in Sources */,
+				CEA5118A25B194D300D5A724 /* Color+Ex.swift in Sources */,
 				CE76F8B025A4177E002F6A51 /* TTLoginViewController.swift in Sources */,
 				CEA5115E25B02B2900D5A724 /* TTUser.swift in Sources */,
 				CEE1511C25A83DC500C5A618 /* CodeSegment.swift in Sources */,

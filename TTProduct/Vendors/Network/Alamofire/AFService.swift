@@ -8,9 +8,11 @@
 import Foundation
 import Alamofire
 
-#if os(macOS)
+#if canImport(Cocoa)
 import Cocoa
-#else
+#endif
+
+#if canImport(UIKit)
 import UIKit
 #endif
 

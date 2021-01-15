@@ -5,13 +5,15 @@
 //  Created by Toj on 1/12/21.
 //
 
-#if os(macOS)
+import AFNetworking
+
+#if canImport(Cocoa)
 import Cocoa
-#else
-import UIKit
 #endif
 
-import AFNetworking
+#if canImport(UIKit)
+import UIKit
+#endif
 
 class AFNService: TTNetworkService {
     
