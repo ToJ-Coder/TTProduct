@@ -12,7 +12,7 @@ import TTCoreData_iOS
 #endif
 
 #if canImport(AppKit)
-import TTCoreData_Mac
+import TTCoreData_macOS
 #endif
 
 public struct TTRequest { }

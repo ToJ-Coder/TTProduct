@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_TTCoreData_MacVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_TTCoreData_MacVersionString[];
+FOUNDATION_EXPORT double Pods_TTCoreData_macOSVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TTCoreData_macOSVersionString[];
 

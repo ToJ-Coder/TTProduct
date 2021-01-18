@@ -103,10 +103,6 @@
 		CEA51B3D25B59A2D00D5A724 /* TTCOM-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CEA51BC125B5ABBC00D5A724 /* TTCustomConvertible.swift */,
-				CEA51BC225B5ABBC00D5A724 /* TTEncryptionProtocol.swift */,
-				CEA51BC325B5ABBC00D5A724 /* TTModelConvertible.swift */,
-				CEA51BC425B5ABBC00D5A724 /* TTOperator.swift */,
 				CEA51B3E25B59A2D00D5A724 /* TTCOM_iOS.h */,
 				CEA51B3F25B59A2D00D5A724 /* Info.plist */,
 			);
@@ -116,6 +112,10 @@
 		CEA51B4625B59A6300D5A724 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CEA51BC125B5ABBC00D5A724 /* TTCustomConvertible.swift */,
+				CEA51BC325B5ABBC00D5A724 /* TTModelConvertible.swift */,
+				CEA51BC425B5ABBC00D5A724 /* TTOperator.swift */,
+				CEA51BC225B5ABBC00D5A724 /* TTEncryptionProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";

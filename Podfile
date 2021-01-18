@@ -32,7 +32,7 @@ target 'TTNetwork-iOS' do
   json_pods
 end
 
-target 'TTNetwork-Mac' do
+target 'TTNetwork-macOS' do
   use_frameworks!
   
   project 'TTNetwork/TTNetwork.xcodeproj'
@@ -49,7 +49,7 @@ target 'TTCoreData-iOS' do
   json_pods
 end
 
-target 'TTCoreData-Mac' do
+target 'TTCoreData-macOS' do
   use_frameworks!
 
   project 'TTCoreData/TTCoreData.xcodeproj'

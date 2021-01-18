@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEA5196A25B5807E00D5A724 /* TTBridgingCenter_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA5196825B5807E00D5A724 /* TTBridgingCenter_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEA5198D25B580AE00D5A724 /* TTBridgingCenter_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA5198B25B580AE00D5A724 /* TTBridgingCenter_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA51BF625B5AE0600D5A724 /* TTBridgingCenter_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA51BF425B5AE0600D5A724 /* TTBridgingCenter_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CEA5196625B5807E00D5A724 /* TTBridgingCenter_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTBridgingCenter_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA5196825B5807E00D5A724 /* TTBridgingCenter_Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTBridgingCenter_Mac.h; sourceTree = "<group>"; };
-		CEA5196925B5807E00D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA5198925B580AE00D5A724 /* TTBridgingCenter_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTBridgingCenter_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA5198B25B580AE00D5A724 /* TTBridgingCenter_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTBridgingCenter_iOS.h; sourceTree = "<group>"; };
 		CEA5198C25B580AE00D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51BF225B5AE0600D5A724 /* TTBridgingCenter_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTBridgingCenter_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51BF425B5AE0600D5A724 /* TTBridgingCenter_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTBridgingCenter_macOS.h; sourceTree = "<group>"; };
+		CEA51BF525B5AE0600D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CEA5196325B5807E00D5A724 /* Frameworks */ = {
+		CEA5198625B580AE00D5A724 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEA5198625B580AE00D5A724 /* Frameworks */ = {
+		CEA51BEF25B5AE0600D5A724 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,7 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA5198A25B580AE00D5A724 /* TTBridgingCenter-iOS */,
-				CEA5196725B5807E00D5A724 /* TTBridgingCenter-Mac */,
+				CEA51BF325B5AE0600D5A724 /* TTBridgingCenter-macOS */,
 				CEA5169C25B55EF100D5A724 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,19 +50,10 @@
 		CEA5169C25B55EF100D5A724 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEA5196625B5807E00D5A724 /* TTBridgingCenter_Mac.framework */,
 				CEA5198925B580AE00D5A724 /* TTBridgingCenter_iOS.framework */,
+				CEA51BF225B5AE0600D5A724 /* TTBridgingCenter_macOS.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CEA5196725B5807E00D5A724 /* TTBridgingCenter-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				CEA5196825B5807E00D5A724 /* TTBridgingCenter_Mac.h */,
-				CEA5196925B5807E00D5A724 /* Info.plist */,
-			);
-			path = "TTBridgingCenter-Mac";
 			sourceTree = "<group>";
 		};
 		CEA5198A25B580AE00D5A724 /* TTBridgingCenter-iOS */ = {
@@ -74,17 +65,18 @@
 			path = "TTBridgingCenter-iOS";
 			sourceTree = "<group>";
 		};
+		CEA51BF325B5AE0600D5A724 /* TTBridgingCenter-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51BF425B5AE0600D5A724 /* TTBridgingCenter_macOS.h */,
+				CEA51BF525B5AE0600D5A724 /* Info.plist */,
+			);
+			path = "TTBridgingCenter-macOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CEA5196125B5807E00D5A724 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEA5196A25B5807E00D5A724 /* TTBridgingCenter_Mac.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEA5198425B580AE00D5A724 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,27 +85,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEA51BED25B5AE0600D5A724 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51BF625B5AE0600D5A724 /* TTBridgingCenter_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CEA5196525B5807E00D5A724 /* TTBridgingCenter-Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEA5196B25B5807E00D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-Mac" */;
-			buildPhases = (
-				CEA5196125B5807E00D5A724 /* Headers */,
-				CEA5196225B5807E00D5A724 /* Sources */,
-				CEA5196325B5807E00D5A724 /* Frameworks */,
-				CEA5196425B5807E00D5A724 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TTBridgingCenter-Mac";
-			productName = "TTBridgingCenter-Mac";
-			productReference = CEA5196625B5807E00D5A724 /* TTBridgingCenter_Mac.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		CEA5198825B580AE00D5A724 /* TTBridgingCenter-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEA5198E25B580AE00D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-iOS" */;
@@ -132,6 +114,24 @@
 			productReference = CEA5198925B580AE00D5A724 /* TTBridgingCenter_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		CEA51BF125B5AE0600D5A724 /* TTBridgingCenter-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA51BF725B5AE0600D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-macOS" */;
+			buildPhases = (
+				CEA51BED25B5AE0600D5A724 /* Headers */,
+				CEA51BEE25B5AE0600D5A724 /* Sources */,
+				CEA51BEF25B5AE0600D5A724 /* Frameworks */,
+				CEA51BF025B5AE0600D5A724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTBridgingCenter-macOS";
+			productName = "TTBridgingCenter-macOS";
+			productReference = CEA51BF225B5AE0600D5A724 /* TTBridgingCenter_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,10 +140,10 @@
 			attributes = {
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
-					CEA5196525B5807E00D5A724 = {
+					CEA5198825B580AE00D5A724 = {
 						CreatedOnToolsVersion = 12.2;
 					};
-					CEA5198825B580AE00D5A724 = {
+					CEA51BF125B5AE0600D5A724 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -162,20 +162,20 @@
 			projectRoot = "";
 			targets = (
 				CEA5198825B580AE00D5A724 /* TTBridgingCenter-iOS */,
-				CEA5196525B5807E00D5A724 /* TTBridgingCenter-Mac */,
+				CEA51BF125B5AE0600D5A724 /* TTBridgingCenter-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CEA5196425B5807E00D5A724 /* Resources */ = {
+		CEA5198725B580AE00D5A724 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEA5198725B580AE00D5A724 /* Resources */ = {
+		CEA51BF025B5AE0600D5A724 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,14 +185,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CEA5196225B5807E00D5A724 /* Sources */ = {
+		CEA5198525B580AE00D5A724 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEA5198525B580AE00D5A724 /* Sources */ = {
+		CEA51BEE25B5AE0600D5A724 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,54 +323,6 @@
 			};
 			name = Release;
 		};
-		CEA5196C25B5807E00D5A724 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "TTBridgingCenter-Mac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTBridgingCenter-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		CEA5196D25B5807E00D5A724 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "TTBridgingCenter-Mac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTBridgingCenter-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		CEA5198F25B580AE00D5A724 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -424,6 +376,52 @@
 			};
 			name = Release;
 		};
+		CEA51BF825B5AE0600D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTBridgingCenter-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTBridgingCenter-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CEA51BF925B5AE0600D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTBridgingCenter-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTBridgingCenter-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -436,20 +434,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEA5196B25B5807E00D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEA5196C25B5807E00D5A724 /* Debug */,
-				CEA5196D25B5807E00D5A724 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CEA5198E25B580AE00D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEA5198F25B580AE00D5A724 /* Debug */,
 				CEA5199025B580AE00D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA51BF725B5AE0600D5A724 /* Build configuration list for PBXNativeTarget "TTBridgingCenter-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA51BF825B5AE0600D5A724 /* Debug */,
+				CEA51BF925B5AE0600D5A724 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

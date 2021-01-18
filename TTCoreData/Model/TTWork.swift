@@ -7,35 +7,35 @@
 
 public struct TTWork: TTJSONCodable {
     public init() { }
-    var workPage: TTWorkPage?
-    var freeCodeList:[TTWorkFreeCode]?
+    public var workPage: TTWorkPage?
+    public var freeCodeList:[TTWorkFreeCode]?
 }
 
 public struct TTWorkPage: TTJSONCodable {
     public init() { }
     /// 总数量
-    var total : Int = 0
+    public var total : Int = 0
     /// 当前页
-    var pageNum: Int = 0
+    public var pageNum: Int = 0
     // 当前页的数量
-    var pageSize: Int = 0
-    var list: [WorkModel]?
+    public var pageSize: Int = 0
+    public var list: [WorkModel]?
 }
 
 public struct TTWorkFreeCode: TTJSONCodable {
     public init() { }
-    var url: String = ""
-    var name: String = ""
-    var imgUrl: String = ""
+    public var url: String = ""
+    public var name: String = ""
+    public var imgUrl: String = ""
 }
 
 public struct WorkModel: TTJSONCodable {
     public init() { }
-    var workType: Int = 0
-    var icon: String = ""
-    var lastUpdateTime: Int = 0
-    var workName: String = ""
-    var lessonTimeName: String = ""
-    var workViewUrl: String = ""
-    var workUpdateUrl: String = ""
+    public var workType: Int = 0
+    public var icon: String = ""
+    public var lastUpdateTime: Int = 0
+    public var workName: String = ""
+    public var lessonTimeName: String = ""
+    public var workViewUrl: String = ""
+    public var workUpdateUrl: String = ""
 }

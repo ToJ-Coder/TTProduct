@@ -20,6 +20,10 @@
 		CEA51AFF25B5989700D5A724 /* TTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF525B5989600D5A724 /* TTWindowController.swift */; };
 		CEA51BA925B59EEA00D5A724 /* TTCOM_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */; };
 		CEA51BAA25B59EEA00D5A724 /* TTCOM_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA51C3425B5AEEE00D5A724 /* TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */; };
+		CEA51C3525B5AEEE00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA51C3725B5AF3C00D5A724 /* TTNetwork_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */; };
+		CEA51C3825B5AF3C00D5A724 /* TTNetwork_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +34,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CEA51BAA25B59EEA00D5A724 /* TTCOM_macOS.framework in Embed Frameworks */,
+				CEA51C3825B5AF3C00D5A724 /* TTNetwork_macOS.framework in Embed Frameworks */,
+				CEA51C3525B5AEEE00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +58,8 @@
 		CEA51AF425B5989600D5A724 /* TTTitleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTitleBar.swift; sourceTree = "<group>"; };
 		CEA51AF525B5989600D5A724 /* TTWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWindowController.swift; sourceTree = "<group>"; };
 		CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCOM_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTProduct_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4372BA9AB39B0F5C37A466E /* Pods-TTProduct-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-macOS.debug.xcconfig"; path = "Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA51C3425B5AEEE00D5A724 /* TTCoreData_macOS.framework in Frameworks */,
+				CEA51C3725B5AF3C00D5A724 /* TTNetwork_macOS.framework in Frameworks */,
 				CEA51BA925B59EEA00D5A724 /* TTCOM_macOS.framework in Frameworks */,
 				8020340844D1E433D7D40C4D /* Pods_TTProduct_macOS.framework in Frameworks */,
 			);
@@ -72,6 +82,8 @@
 		88AD3AC1F9148193D9397ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */,
+				CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */,
 				CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */,
 				E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */,
 			);

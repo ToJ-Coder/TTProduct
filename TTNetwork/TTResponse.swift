@@ -14,7 +14,7 @@ import TTCoreData_iOS
 #endif
 
 #if canImport(AppKit)
-import TTCoreData_Mac
+import TTCoreData_macOS
 #endif
 
 extension NSObject:   TTJSONCodable { }
@@ -23,10 +23,10 @@ extension Array:      TTJSONCodable { }
 extension Dictionary: TTJSONCodable { }
 
 public class TTResponse<Element>: TTObject {
-    var code: Code = .failed
-    let data: Element? = nil
-    var message = ""
-    var traceId = ""
+    public var code: Code = .failed
+    public let data: Element? = nil
+    public var message = ""
+    public var traceId = ""
     
     deinit {
         #if canImport(UIKit)
@@ -37,7 +37,7 @@ public class TTResponse<Element>: TTObject {
 }
 
 extension TTResponse {
-    enum Code: NSInteger, ConvertibleEnum {
+    public enum Code: NSInteger, ConvertibleEnum {
         // 服务器返回
         case success = 0
         case failed   = 1

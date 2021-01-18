@@ -33,11 +33,11 @@ public protocol TTPersistence {
     func clear()
 }
 
-extension TTPersistence {
-    public var persistence:String? { return nil }
-    public func save(model: String) { }
-    public func remove(key: String) { }
-    public func clear() { }
+public extension TTPersistence {
+    var persistence:String? { return nil }
+    func save(model: String) { }
+    func remove(key: String) { }
+    func clear() { }
 }
 
 extension TTPersistence {

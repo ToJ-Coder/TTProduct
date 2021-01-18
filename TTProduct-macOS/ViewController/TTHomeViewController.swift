@@ -7,18 +7,18 @@
 
 import Cocoa
 import TTCOM_macOS
+import TTCoreData_macOS
+import TTNetwork_macOS
 
 class TTHomeViewController: TTViewController {
     
     var b:TTButton?
     var b2:TTButton?
     
-    //    var aMap:NSMapTable<NSString, AnyObject>?
-    
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        //        print(aMap)
+        // print(aMap)
     }
     
     
@@ -47,7 +47,7 @@ class TTHomeViewController: TTViewController {
     @objc private func didTapTest() {
         print(className + " : " + #function)
         
-//        didTapTest2()
+        didTapTest2()
     }
     
     override func windowShouldClose(_ sender: NSWindow) -> Bool {
@@ -64,70 +64,71 @@ class TTHomeViewController: TTViewController {
     }
 }
 
-//extension TTHomeViewController: TTPersistence {
-//
-//    private func requestSecret() {
-//        TTAPIService.Request.secret { [weak self] (response)  in
-//            if let appSecret = response.data {
-//                print(appSecret)
-//                //                self?.save(appSecret: appSecret)
-//                self?.requestLogin()
-//                return
-//            }
-//        }
-//    }
-//    private func didTapTest2() {
-//        print(className + " : " + #function)
-//
-//        //         requestSecret()
-//
-//        requestLogin()
-//    }
-//
-//    private func logInfo() {
-//        print(className + " : " + (appSecret ?? ""))
-//
-//        print(className + " : " + (token ?? ""))
-//
-//        print(className + " : " + (secret ?? ""))
-//
-//        print(className + " : " + (refreshToken ?? ""))
-//
-//        print(className + " : " + (refreshSecret ?? ""))
-//    }
-//
-//    private func requestLogin() {
-//        // jsonToObj()
-//        let account = "13800000001"
-//        let password = "000001"
-//        let pwdMD5Second = password.tt_md5.tt_md5
-//        let signature = ("1b5332a95b4943df9d83dbd1f3dd3c9f" + (account + pwdMD5Second).tt_md5).tt_md5
-//
-//        var parameters = [String : Any]()
-//        parameters["signature"] = signature
-//        parameters["phoneNum"] = account
-//        parameters["appKey"] = "88F0373F94FD3EA7607F886D5EA27621"
-//
-//        TTAPIService.Request.login(parameters) { [weak self] (response) in
-//            if let loginModel = response.data {
-//                self?.save(model: loginModel)
-//                self?.logInfo()
-//                self?.requestWork()
-//                return
-//            }
-//        }
-//    }
-//
-//    private func requestWork() {
-//        var parameters = [String : Any]()
-//        parameters["pageSize"] = 10
-//        parameters["workType"] = 1
-//        parameters["page"] = 1
-//        TTAPIService.Request.works(parameters) { (response) in
-//            if let works = response.data {
-//                print(works.freeCodeList!.count)
-//                return
-//            }
-//        }
-//    }
-//}
+extension TTHomeViewController: TTPersistence {
+
+    private func requestSecret() {
+        
+        TTAPIService.Request.secret { [weak self] (response)  in
+            if let appSecret = response.data {
+                print(appSecret)
+                self?.save(appSecret: appSecret)
+                self?.requestLogin()
+                return
+            }
+        }
+    }
+    private func didTapTest2() {
+        print(className + " : " + #function)
+
+        // requestSecret()
+
+        requestLogin()
+    }
+
+    private func logInfo() {
+        print(className + " : " + (appSecret ?? ""))
+
+        print(className + " : " + (token ?? ""))
+
+        print(className + " : " + (secret ?? ""))
+
+        print(className + " : " + (refreshToken ?? ""))
+
+        print(className + " : " + (refreshSecret ?? ""))
+    }
+
+    private func requestLogin() {
+        // jsonToObj()
+        let account = "13800000001"
+        let password = "000001"
+        let pwdMD5Second = password.tt_md5.tt_md5
+        let signature = ("1b5332a95b4943df9d83dbd1f3dd3c9f" + (account + pwdMD5Second).tt_md5).tt_md5
+
+        var parameters = [String : Any]()
+        parameters["signature"] = signature
+        parameters["phoneNum"] = account
+        parameters["appKey"] = "88F0373F94FD3EA7607F886D5EA27621"
+
+        TTAPIService.Request.login(parameters) { [weak self] (response) in
+            if let loginModel = response.data {
+                self?.save(model: loginModel)
+                self?.logInfo()
+                self?.requestWork()
+                return
+            }
+        }
+    }
+
+    private func requestWork() {
+        var parameters = [String : Any]()
+        parameters["pageSize"] = 10
+        parameters["workType"] = 1
+        parameters["page"] = 1
+        TTAPIService.Request.works(parameters) { (response) in
+            if let works = response.data {
+                print(works.freeCodeList!.count)
+                return
+            }
+        }
+    }
+}

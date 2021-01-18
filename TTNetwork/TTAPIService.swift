@@ -13,7 +13,7 @@ import TTCoreData_iOS
 #endif
 
 #if canImport(AppKit)
-import TTCoreData_Mac
+import TTCoreData_macOS
 #endif
 
 public struct TTAPIService { }
@@ -45,19 +45,19 @@ public extension TTAPIService {
             }
         }
         
-        static
+        public static
         func secret(completion:((_ response:TTResponse<String>)->())?) {
             general(api: .secret, model: String.self, hearders: .secret, completion: completion)
         }
         
-        static
+        public static
         func login(_ parameters:[String: Any]? = nil,
                    completion:((_ response:TTResponse<TTLoginModel>)->())?) {
             
             general(api: .login, model: TTLoginModel.self, parameters: parameters, completion: completion)
         }
         
-        static
+        public static
         func works(_ parameters:[String: Any]? = nil,
                    completion:((_ response:TTResponse<TTWork>)->())?) {
             
