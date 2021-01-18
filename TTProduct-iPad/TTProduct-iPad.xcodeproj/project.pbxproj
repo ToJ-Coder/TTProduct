@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CDC80034FE06E28D89AF4A3 /* Pods_TTProduct_iPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B94B7688A0AD47E6CBF138 /* Pods_TTProduct_iPad.framework */; };
+		CEA5163B25B55D0400D5A724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5163A25B55D0400D5A724 /* AppDelegate.swift */; };
+		CEA5163F25B55D0400D5A724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5163E25B55D0400D5A724 /* ViewController.swift */; };
+		CEA5164225B55D0400D5A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA5164025B55D0400D5A724 /* Main.storyboard */; };
+		CEA5164425B55D0500D5A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA5164325B55D0500D5A724 /* Assets.xcassets */; };
+		CEA5164725B55D0500D5A724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA5164525B55D0500D5A724 /* LaunchScreen.storyboard */; };
+		CEA51BAD25B59EF300D5A724 /* TTCOM_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BAC25B59EF300D5A724 /* TTCOM_iOS.framework */; };
+		CEA51BAE25B59EF300D5A724 /* TTCOM_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BAC25B59EF300D5A724 /* TTCOM_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA51BAF25B59EF400D5A724 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA51BAE25B59EF300D5A724 /* TTCOM_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		45B94B7688A0AD47E6CBF138 /* Pods_TTProduct_iPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTProduct_iPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E940A49EF1DBE7857DB710D /* Pods-TTProduct-iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-iPad.release.xcconfig"; path = "Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad.release.xcconfig"; sourceTree = "<group>"; };
+		B8C3F8F67D0B3DB091EF6BCE /* Pods-TTProduct-iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-iPad.debug.xcconfig"; path = "Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA5163725B55D0400D5A724 /* TTProduct-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTProduct-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA5163A25B55D0400D5A724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEA5163E25B55D0400D5A724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEA5164125B55D0400D5A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEA5164325B55D0500D5A724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA5164625B55D0500D5A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEA5164825B55D0500D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51BAC25B59EF300D5A724 /* TTCOM_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCOM_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEA5163425B55D0400D5A724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51BAD25B59EF300D5A724 /* TTCOM_iOS.framework in Frameworks */,
+				3CDC80034FE06E28D89AF4A3 /* Pods_TTProduct_iPad.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BFEC305CA0460F17AEE158C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8C3F8F67D0B3DB091EF6BCE /* Pods-TTProduct-iPad.debug.xcconfig */,
+				9E940A49EF1DBE7857DB710D /* Pods-TTProduct-iPad.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		942BF38909D87EC60BB24522 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51BAC25B59EF300D5A724 /* TTCOM_iOS.framework */,
+				45B94B7688A0AD47E6CBF138 /* Pods_TTProduct_iPad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEA5162E25B55D0400D5A724 = {
+			isa = PBXGroup;
+			children = (
+				CEA5163925B55D0400D5A724 /* TTProduct-iPad */,
+				CEA5163825B55D0400D5A724 /* Products */,
+				5BFEC305CA0460F17AEE158C /* Pods */,
+				942BF38909D87EC60BB24522 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEA5163825B55D0400D5A724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEA5163725B55D0400D5A724 /* TTProduct-iPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEA5163925B55D0400D5A724 /* TTProduct-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				CEA5163A25B55D0400D5A724 /* AppDelegate.swift */,
+				CEA5163E25B55D0400D5A724 /* ViewController.swift */,
+				CEA5164025B55D0400D5A724 /* Main.storyboard */,
+				CEA5164325B55D0500D5A724 /* Assets.xcassets */,
+				CEA5164525B55D0500D5A724 /* LaunchScreen.storyboard */,
+				CEA5164825B55D0500D5A724 /* Info.plist */,
+			);
+			path = "TTProduct-iPad";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEA5163625B55D0400D5A724 /* TTProduct-iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA5164B25B55D0500D5A724 /* Build configuration list for PBXNativeTarget "TTProduct-iPad" */;
+			buildPhases = (
+				99F852CE76755CBDE3C664CF /* [CP] Check Pods Manifest.lock */,
+				CEA5163325B55D0400D5A724 /* Sources */,
+				CEA5163425B55D0400D5A724 /* Frameworks */,
+				CEA5163525B55D0400D5A724 /* Resources */,
+				B79249A60CF03D282283C3CA /* [CP] Embed Pods Frameworks */,
+				CEA51BAF25B59EF400D5A724 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTProduct-iPad";
+			productName = "TTProduct-iPad";
+			productReference = CEA5163725B55D0400D5A724 /* TTProduct-iPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEA5162F25B55D0400D5A724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					CEA5163625B55D0400D5A724 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = CEA5163225B55D0400D5A724 /* Build configuration list for PBXProject "TTProduct-iPad" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEA5162E25B55D0400D5A724;
+			productRefGroup = CEA5163825B55D0400D5A724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEA5163625B55D0400D5A724 /* TTProduct-iPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEA5163525B55D0400D5A724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA5164725B55D0500D5A724 /* LaunchScreen.storyboard in Resources */,
+				CEA5164425B55D0500D5A724 /* Assets.xcassets in Resources */,
+				CEA5164225B55D0400D5A724 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99F852CE76755CBDE3C664CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTProduct-iPad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B79249A60CF03D282283C3CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEA5163325B55D0400D5A724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA5163F25B55D0400D5A724 /* ViewController.swift in Sources */,
+				CEA5163B25B55D0400D5A724 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEA5164025B55D0400D5A724 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEA5164125B55D0400D5A724 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CEA5164525B55D0500D5A724 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEA5164625B55D0500D5A724 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEA5164925B55D0500D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEA5164A25B55D0500D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEA5164C25B55D0500D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C3F8F67D0B3DB091EF6BCE /* Pods-TTProduct-iPad.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TTProduct-iPad/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTProduct-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEA5164D25B55D0500D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E940A49EF1DBE7857DB710D /* Pods-TTProduct-iPad.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TTProduct-iPad/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTProduct-iPad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEA5163225B55D0400D5A724 /* Build configuration list for PBXProject "TTProduct-iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA5164925B55D0500D5A724 /* Debug */,
+				CEA5164A25B55D0500D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA5164B25B55D0500D5A724 /* Build configuration list for PBXNativeTarget "TTProduct-iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA5164C25B55D0500D5A724 /* Debug */,
+				CEA5164D25B55D0500D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEA5162F25B55D0400D5A724 /* Project object */;
+}

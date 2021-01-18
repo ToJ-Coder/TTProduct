@@ -1,0 +1,6 @@
+framework module Pods_TTCoreData_iOS {
+  umbrella header "Pods-TTCoreData-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
