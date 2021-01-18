@@ -14,7 +14,7 @@ end
 
 def json_pods
   pod 'KakaJSON'
-  pod 'HandyJSON'
+  pod 'HandyJSON', '~> 5.0.2'
 end
 
 
@@ -29,7 +29,9 @@ target 'TTNetwork-iOS' do
   project 'TTNetwork/TTNetwork.xcodeproj'
   
   networking_pods
+  
   json_pods
+  
 end
 
 target 'TTNetwork-macOS' do
@@ -38,7 +40,9 @@ target 'TTNetwork-macOS' do
   project 'TTNetwork/TTNetwork.xcodeproj'
   
   networking_pods
+  
   json_pods
+  
 end
 
 target 'TTCoreData-iOS' do
@@ -64,7 +68,12 @@ target 'TTProduct-iPad' do
 
   project 'TTProduct-iPad/TTProduct-iPad.xcodeproj'
   
+  networking_pods
+  
   common_pods
+  
+  json_pods
+  
 end
 
 # 项目引用
@@ -74,5 +83,10 @@ target 'TTProduct-macOS' do
 
   project 'TTProduct-macOS/TTProduct-macOS.xcodeproj'
   
+  networking_pods
+  
   common_pods
+  
+  json_pods
+  
 end

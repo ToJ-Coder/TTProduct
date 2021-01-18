@@ -80,9 +80,9 @@ extension TTHomeViewController: TTPersistence {
     private func didTapTest2() {
         print(className + " : " + #function)
 
-        // requestSecret()
+         requestSecret()
 
-        requestLogin()
+//        requestLogin()
     }
 
     private func logInfo() {

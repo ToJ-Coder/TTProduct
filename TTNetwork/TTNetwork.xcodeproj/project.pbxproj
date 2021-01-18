@@ -29,6 +29,8 @@
 		CEA51C3F25B5B06500D5A724 /* TTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A0F25B5827100D5A724 /* TTNetworkService.swift */; };
 		CEA51C4025B5B06500D5A724 /* AFNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2625B5828200D5A724 /* AFNService.swift */; };
 		CEA51C4125B5B06500D5A724 /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2825B5828200D5A724 /* AFService.swift */; };
+		CEA51C8225B5B51D00D5A724 /* TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */; };
+		CEA51C8325B5B51D00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CEA51A4E25B5869600D5A724 /* TTCoreData_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C8425B5B51D00D5A724 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA51C8325B5B51D00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +83,7 @@
 		CEA51C1625B5AE6000D5A724 /* TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA51C1825B5AE6000D5A724 /* TTNetwork_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNetwork_macOS.h; sourceTree = "<group>"; };
 		CEA51C1925B5AE6000D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE71C0BCEDC5670E4A026DE8 /* Pods_TTNetwork_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTNetwork_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E4B6CD08E4E38DEE4B16A26 /* Pods_TTNetwork_macOS.framework in Frameworks */,
+				CEA51C8225B5B51D00D5A724 /* TTCoreData_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +126,7 @@
 		B8CF57FD514CBFF052AFCC9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */,
 				CEA51A5025B586A000D5A724 /* TTCoreData_Mac.framework */,
 				CEA51A4C25B5869600D5A724 /* TTCoreData_iOS.framework */,
 				43FA6C22BE68D36FB3D5058D /* Pods_TTNetwork_Mac.framework */,
@@ -233,6 +249,7 @@
 				CEA51C1225B5AE6000D5A724 /* Sources */,
 				CEA51C1325B5AE6000D5A724 /* Frameworks */,
 				CEA51C1425B5AE6000D5A724 /* Resources */,
+				CEA51C8425B5B51D00D5A724 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

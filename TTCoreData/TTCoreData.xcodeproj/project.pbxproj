@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D09CD5BD136F94EB9B54183 /* Pods_TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2103F3560F6A81109A581033 /* Pods_TTCoreData_macOS.framework */; };
+		0BC9230957420E136A174798 /* Pods_TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2103F3560F6A81109A581033 /* Pods_TTCoreData_macOS.framework */; };
 		CEA5194B25B57F7400D5A724 /* TTCoreData_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA5194925B57F7400D5A724 /* TTCoreData_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEA519AE25B5811A00D5A724 /* TTUserPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA519AC25B5811A00D5A724 /* TTUserPersistence.swift */; };
 		CEA519B025B5811A00D5A724 /* TTPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA519AD25B5811A00D5A724 /* TTPersistence.swift */; };
@@ -46,6 +46,9 @@
 		CEA51C0125B5AE3500D5A724 /* TTCoreData_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTCoreData_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA51C0325B5AE3500D5A724 /* TTCoreData_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCoreData_macOS.h; sourceTree = "<group>"; };
 		CEA51C0425B5AE3500D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51C7C25B5B4F100D5A724 /* TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C8725B5B62000D5A724 /* HandyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C9425B5B87D00D5A724 /* HandyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F816D208935836C62712E7FC /* Pods-TTCoreData-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTCoreData-iOS.release.xcconfig"; path = "Target Support Files/Pods-TTCoreData-iOS/Pods-TTCoreData-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D09CD5BD136F94EB9B54183 /* Pods_TTCoreData_macOS.framework in Frameworks */,
+				0BC9230957420E136A174798 /* Pods_TTCoreData_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,9 @@
 		BB6E81DA6099A903DDF11E26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA51C9425B5B87D00D5A724 /* HandyJSON.framework */,
+				CEA51C8725B5B62000D5A724 /* HandyJSON.framework */,
+				CEA51C7C25B5B4F100D5A724 /* TTNetwork_macOS.framework */,
 				1E854574059FA9CE2D068C0F /* Pods_TTCoreData_Mac.framework */,
 				470350B0AB12066AFA9B5E27 /* Pods_TTCoreData_iOS.framework */,
 				2103F3560F6A81109A581033 /* Pods_TTCoreData_macOS.framework */,
