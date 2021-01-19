@@ -1,2 +1,0 @@
-# TTProduct
-Mac Product

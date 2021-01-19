@@ -1,0 +1,659 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018BC45EEE00E251075B989B /* Pods_TTNetwork_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE71C0BCEDC5670E4A026DE8 /* Pods_TTNetwork_iOS.framework */; };
+		2E4B6CD08E4E38DEE4B16A26 /* Pods_TTNetwork_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4243E407835A33261D3B4E0 /* Pods_TTNetwork_macOS.framework */; };
+		CEA519FB25B5823300D5A724 /* TTNetwork_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA519F925B5823300D5A724 /* TTNetwork_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA51A1325B5827200D5A724 /* TTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A0F25B5827100D5A724 /* TTNetworkService.swift */; };
+		CEA51A1525B5827200D5A724 /* TTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1025B5827200D5A724 /* TTResponse.swift */; };
+		CEA51A1725B5827200D5A724 /* TTServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1125B5827200D5A724 /* TTServiceProtocol.swift */; };
+		CEA51A1925B5827200D5A724 /* TTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1225B5827200D5A724 /* TTRequest.swift */; };
+		CEA51A1F25B5827A00D5A724 /* TTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1D25B5827A00D5A724 /* TTAPIService.swift */; };
+		CEA51A2125B5827A00D5A724 /* TTHTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1E25B5827A00D5A724 /* TTHTTPHelper.swift */; };
+		CEA51A2925B5828200D5A724 /* AFNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2625B5828200D5A724 /* AFNService.swift */; };
+		CEA51A2B25B5828200D5A724 /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2825B5828200D5A724 /* AFService.swift */; };
+		CEA51A4D25B5869600D5A724 /* TTCoreData_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51A4C25B5869600D5A724 /* TTCoreData_iOS.framework */; };
+		CEA51A4E25B5869600D5A724 /* TTCoreData_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51A4C25B5869600D5A724 /* TTCoreData_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA51C1A25B5AE6000D5A724 /* TTNetwork_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA51C1825B5AE6000D5A724 /* TTNetwork_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA51C3A25B5B06500D5A724 /* TTAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1D25B5827A00D5A724 /* TTAPIService.swift */; };
+		CEA51C3B25B5B06500D5A724 /* TTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1225B5827200D5A724 /* TTRequest.swift */; };
+		CEA51C3C25B5B06500D5A724 /* TTHTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1E25B5827A00D5A724 /* TTHTTPHelper.swift */; };
+		CEA51C3D25B5B06500D5A724 /* TTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1025B5827200D5A724 /* TTResponse.swift */; };
+		CEA51C3E25B5B06500D5A724 /* TTServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A1125B5827200D5A724 /* TTServiceProtocol.swift */; };
+		CEA51C3F25B5B06500D5A724 /* TTNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A0F25B5827100D5A724 /* TTNetworkService.swift */; };
+		CEA51C4025B5B06500D5A724 /* AFNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2625B5828200D5A724 /* AFNService.swift */; };
+		CEA51C4125B5B06500D5A724 /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51A2825B5828200D5A724 /* AFService.swift */; };
+		CEA51C8225B5B51D00D5A724 /* TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */; };
+		CEA51C8325B5B51D00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA51A4F25B5869600D5A724 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA51A4E25B5869600D5A724 /* TTCoreData_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C8425B5B51D00D5A724 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA51C8325B5B51D00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		210393E87DBBD048DBE0F363 /* Pods-TTNetwork-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TTNetwork-iOS/Pods-TTNetwork-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		23A059CAC5FD6CEE71599962 /* Pods-TTNetwork-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-Mac.debug.xcconfig"; path = "Target Support Files/Pods-TTNetwork-Mac/Pods-TTNetwork-Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		43FA6C22BE68D36FB3D5058D /* Pods_TTNetwork_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTNetwork_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F1BAB6D6CFA4BDE0841844 /* Pods-TTNetwork-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-iOS.release.xcconfig"; path = "Target Support Files/Pods-TTNetwork-iOS/Pods-TTNetwork-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		8A7CF4DC2AD112DFE240208E /* Pods-TTNetwork-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-macOS.release.xcconfig"; path = "Target Support Files/Pods-TTNetwork-macOS/Pods-TTNetwork-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		98CD1D68D94D0DD48A8230C1 /* Pods-TTNetwork-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-Mac.release.xcconfig"; path = "Target Support Files/Pods-TTNetwork-Mac/Pods-TTNetwork-Mac.release.xcconfig"; sourceTree = "<group>"; };
+		B57DD003F8546C9CD734AB58 /* Pods-TTNetwork-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetwork-macOS.debug.xcconfig"; path = "Target Support Files/Pods-TTNetwork-macOS/Pods-TTNetwork-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C4243E407835A33261D3B4E0 /* Pods_TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA519F725B5823300D5A724 /* TTNetwork_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTNetwork_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA519F925B5823300D5A724 /* TTNetwork_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNetwork_iOS.h; sourceTree = "<group>"; };
+		CEA519FA25B5823300D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51A0F25B5827100D5A724 /* TTNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTNetworkService.swift; sourceTree = "<group>"; };
+		CEA51A1025B5827200D5A724 /* TTResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTResponse.swift; sourceTree = "<group>"; };
+		CEA51A1125B5827200D5A724 /* TTServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTServiceProtocol.swift; sourceTree = "<group>"; };
+		CEA51A1225B5827200D5A724 /* TTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTRequest.swift; sourceTree = "<group>"; };
+		CEA51A1D25B5827A00D5A724 /* TTAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTAPIService.swift; sourceTree = "<group>"; };
+		CEA51A1E25B5827A00D5A724 /* TTHTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTHTTPHelper.swift; sourceTree = "<group>"; };
+		CEA51A2625B5828200D5A724 /* AFNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFNService.swift; sourceTree = "<group>"; };
+		CEA51A2825B5828200D5A724 /* AFService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFService.swift; sourceTree = "<group>"; };
+		CEA51A4C25B5869600D5A724 /* TTCoreData_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51A5025B586A000D5A724 /* TTCoreData_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C1625B5AE6000D5A724 /* TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C1825B5AE6000D5A724 /* TTNetwork_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNetwork_macOS.h; sourceTree = "<group>"; };
+		CEA51C1925B5AE6000D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE71C0BCEDC5670E4A026DE8 /* Pods_TTNetwork_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTNetwork_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEA519F425B5823300D5A724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018BC45EEE00E251075B989B /* Pods_TTNetwork_iOS.framework in Frameworks */,
+				CEA51A4D25B5869600D5A724 /* TTCoreData_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C1325B5AE6000D5A724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E4B6CD08E4E38DEE4B16A26 /* Pods_TTNetwork_macOS.framework in Frameworks */,
+				CEA51C8225B5B51D00D5A724 /* TTCoreData_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		009CCE4C94FB08A3C807C946 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23A059CAC5FD6CEE71599962 /* Pods-TTNetwork-Mac.debug.xcconfig */,
+				98CD1D68D94D0DD48A8230C1 /* Pods-TTNetwork-Mac.release.xcconfig */,
+				210393E87DBBD048DBE0F363 /* Pods-TTNetwork-iOS.debug.xcconfig */,
+				86F1BAB6D6CFA4BDE0841844 /* Pods-TTNetwork-iOS.release.xcconfig */,
+				B57DD003F8546C9CD734AB58 /* Pods-TTNetwork-macOS.debug.xcconfig */,
+				8A7CF4DC2AD112DFE240208E /* Pods-TTNetwork-macOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		B8CF57FD514CBFF052AFCC9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51C8125B5B51D00D5A724 /* TTCoreData_macOS.framework */,
+				CEA51A5025B586A000D5A724 /* TTCoreData_Mac.framework */,
+				CEA51A4C25B5869600D5A724 /* TTCoreData_iOS.framework */,
+				43FA6C22BE68D36FB3D5058D /* Pods_TTNetwork_Mac.framework */,
+				FE71C0BCEDC5670E4A026DE8 /* Pods_TTNetwork_iOS.framework */,
+				C4243E407835A33261D3B4E0 /* Pods_TTNetwork_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEA519DB25B5820200D5A724 = {
+			isa = PBXGroup;
+			children = (
+				CEA51A1D25B5827A00D5A724 /* TTAPIService.swift */,
+				CEA51A1225B5827200D5A724 /* TTRequest.swift */,
+				CEA51A1E25B5827A00D5A724 /* TTHTTPHelper.swift */,
+				CEA51A1025B5827200D5A724 /* TTResponse.swift */,
+				CEA51A1125B5827200D5A724 /* TTServiceProtocol.swift */,
+				CEA51A0F25B5827100D5A724 /* TTNetworkService.swift */,
+				CEA51A2525B5828200D5A724 /* AFN */,
+				CEA51A2725B5828200D5A724 /* Alamofire */,
+				CEA519F825B5823300D5A724 /* TTNetwork-iOS */,
+				CEA51C1725B5AE6000D5A724 /* TTNetwork-macOS */,
+				CEA519E625B5820200D5A724 /* Products */,
+				009CCE4C94FB08A3C807C946 /* Pods */,
+				B8CF57FD514CBFF052AFCC9C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEA519E625B5820200D5A724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEA519F725B5823300D5A724 /* TTNetwork_iOS.framework */,
+				CEA51C1625B5AE6000D5A724 /* TTNetwork_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEA519F825B5823300D5A724 /* TTNetwork-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEA519F925B5823300D5A724 /* TTNetwork_iOS.h */,
+				CEA519FA25B5823300D5A724 /* Info.plist */,
+			);
+			path = "TTNetwork-iOS";
+			sourceTree = "<group>";
+		};
+		CEA51A2525B5828200D5A724 /* AFN */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51A2625B5828200D5A724 /* AFNService.swift */,
+			);
+			path = AFN;
+			sourceTree = "<group>";
+		};
+		CEA51A2725B5828200D5A724 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51A2825B5828200D5A724 /* AFService.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		CEA51C1725B5AE6000D5A724 /* TTNetwork-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51C1825B5AE6000D5A724 /* TTNetwork_macOS.h */,
+				CEA51C1925B5AE6000D5A724 /* Info.plist */,
+			);
+			path = "TTNetwork-macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CEA519F225B5823300D5A724 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA519FB25B5823300D5A724 /* TTNetwork_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C1125B5AE6000D5A724 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51C1A25B5AE6000D5A724 /* TTNetwork_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CEA519F625B5823300D5A724 /* TTNetwork-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA519FC25B5823300D5A724 /* Build configuration list for PBXNativeTarget "TTNetwork-iOS" */;
+			buildPhases = (
+				68381D880265E3F3C987E822 /* [CP] Check Pods Manifest.lock */,
+				CEA519F225B5823300D5A724 /* Headers */,
+				CEA519F325B5823300D5A724 /* Sources */,
+				CEA519F425B5823300D5A724 /* Frameworks */,
+				CEA519F525B5823300D5A724 /* Resources */,
+				CEA51A4F25B5869600D5A724 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTNetwork-iOS";
+			productName = "TTNetwork-iOS";
+			productReference = CEA519F725B5823300D5A724 /* TTNetwork_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEA51C1525B5AE6000D5A724 /* TTNetwork-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA51C1D25B5AE6000D5A724 /* Build configuration list for PBXNativeTarget "TTNetwork-macOS" */;
+			buildPhases = (
+				338BB7E71EF29FD730F0EB54 /* [CP] Check Pods Manifest.lock */,
+				CEA51C1125B5AE6000D5A724 /* Headers */,
+				CEA51C1225B5AE6000D5A724 /* Sources */,
+				CEA51C1325B5AE6000D5A724 /* Frameworks */,
+				CEA51C1425B5AE6000D5A724 /* Resources */,
+				CEA51C8425B5B51D00D5A724 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTNetwork-macOS";
+			productName = "TTNetwork-macOS";
+			productReference = CEA51C1625B5AE6000D5A724 /* TTNetwork_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEA519DC25B5820200D5A724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					CEA519F625B5823300D5A724 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
+					CEA51C1525B5AE6000D5A724 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = CEA519DF25B5820200D5A724 /* Build configuration list for PBXProject "TTNetwork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEA519DB25B5820200D5A724;
+			productRefGroup = CEA519E625B5820200D5A724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEA519F625B5823300D5A724 /* TTNetwork-iOS */,
+				CEA51C1525B5AE6000D5A724 /* TTNetwork-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEA519F525B5823300D5A724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C1425B5AE6000D5A724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		338BB7E71EF29FD730F0EB54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTNetwork-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68381D880265E3F3C987E822 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTNetwork-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEA519F325B5823300D5A724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51A1725B5827200D5A724 /* TTServiceProtocol.swift in Sources */,
+				CEA51A2925B5828200D5A724 /* AFNService.swift in Sources */,
+				CEA51A2B25B5828200D5A724 /* AFService.swift in Sources */,
+				CEA51A2125B5827A00D5A724 /* TTHTTPHelper.swift in Sources */,
+				CEA51A1525B5827200D5A724 /* TTResponse.swift in Sources */,
+				CEA51A1F25B5827A00D5A724 /* TTAPIService.swift in Sources */,
+				CEA51A1325B5827200D5A724 /* TTNetworkService.swift in Sources */,
+				CEA51A1925B5827200D5A724 /* TTRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA51C1225B5AE6000D5A724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51C3A25B5B06500D5A724 /* TTAPIService.swift in Sources */,
+				CEA51C3B25B5B06500D5A724 /* TTRequest.swift in Sources */,
+				CEA51C3C25B5B06500D5A724 /* TTHTTPHelper.swift in Sources */,
+				CEA51C3D25B5B06500D5A724 /* TTResponse.swift in Sources */,
+				CEA51C3E25B5B06500D5A724 /* TTServiceProtocol.swift in Sources */,
+				CEA51C3F25B5B06500D5A724 /* TTNetworkService.swift in Sources */,
+				CEA51C4025B5B06500D5A724 /* AFNService.swift in Sources */,
+				CEA51C4125B5B06500D5A724 /* AFService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEA519EB25B5820200D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CEA519EC25B5820200D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEA519FD25B5823300D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210393E87DBBD048DBE0F363 /* Pods-TTNetwork-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTNetwork-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTNetwork-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEA519FE25B5823300D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F1BAB6D6CFA4BDE0841844 /* Pods-TTNetwork-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTNetwork-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTNetwork-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEA51C1B25B5AE6000D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B57DD003F8546C9CD734AB58 /* Pods-TTNetwork-macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTNetwork-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTNetwork-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CEA51C1C25B5AE6000D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A7CF4DC2AD112DFE240208E /* Pods-TTNetwork-macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TTNetwork-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTNetwork-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEA519DF25B5820200D5A724 /* Build configuration list for PBXProject "TTNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA519EB25B5820200D5A724 /* Debug */,
+				CEA519EC25B5820200D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA519FC25B5823300D5A724 /* Build configuration list for PBXNativeTarget "TTNetwork-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA519FD25B5823300D5A724 /* Debug */,
+				CEA519FE25B5823300D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA51C1D25B5AE6000D5A724 /* Build configuration list for PBXNativeTarget "TTNetwork-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA51C1B25B5AE6000D5A724 /* Debug */,
+				CEA51C1C25B5AE6000D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEA519DC25B5820200D5A724 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_TTNetwork_macOS {
+  umbrella header "Pods-TTNetwork-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8020340844D1E433D7D40C4D /* Pods_TTProduct_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */; };
+		CEA51ADE25B5984C00D5A724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */; };
+		CEA51AE025B5984C00D5A724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADF25B5984C00D5A724 /* ViewController.swift */; };
+		CEA51AE225B5984D00D5A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA51AE125B5984D00D5A724 /* Assets.xcassets */; };
+		CEA51AE525B5984D00D5A724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA51AE325B5984D00D5A724 /* Main.storyboard */; };
+		CEA51AFA25B5989700D5A724 /* TTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AEF25B5989600D5A724 /* TTHomeViewController.swift */; };
+		CEA51AFB25B5989700D5A724 /* TTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF025B5989600D5A724 /* TTLoginViewController.swift */; };
+		CEA51AFC25B5989700D5A724 /* TTWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF225B5989600D5A724 /* TTWindow.swift */; };
+		CEA51AFD25B5989700D5A724 /* TTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF325B5989600D5A724 /* TTViewController.swift */; };
+		CEA51AFE25B5989700D5A724 /* TTTitleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF425B5989600D5A724 /* TTTitleBar.swift */; };
+		CEA51AFF25B5989700D5A724 /* TTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51AF525B5989600D5A724 /* TTWindowController.swift */; };
+		CEA51BA925B59EEA00D5A724 /* TTCOM_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */; };
+		CEA51BAA25B59EEA00D5A724 /* TTCOM_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA51C3425B5AEEE00D5A724 /* TTCoreData_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */; };
+		CEA51C3525B5AEEE00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEA51C3725B5AF3C00D5A724 /* TTNetwork_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */; };
+		CEA51C3825B5AF3C00D5A724 /* TTNetwork_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA51BAB25B59EEA00D5A724 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEA51BAA25B59EEA00D5A724 /* TTCOM_macOS.framework in Embed Frameworks */,
+				CEA51C3825B5AF3C00D5A724 /* TTNetwork_macOS.framework in Embed Frameworks */,
+				CEA51C3525B5AEEE00D5A724 /* TTCoreData_macOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7AEBDA31361B0B55340FD7B0 /* Pods-TTProduct-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-macOS.release.xcconfig"; path = "Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		CEA51ADA25B5984C00D5A724 /* TTProduct-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTProduct-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEA51ADF25B5984C00D5A724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEA51AE125B5984D00D5A724 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA51AE425B5984D00D5A724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEA51AE625B5984D00D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA51AE725B5984D00D5A724 /* TTProduct_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TTProduct_macOS.entitlements; sourceTree = "<group>"; };
+		CEA51AEF25B5989600D5A724 /* TTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTHomeViewController.swift; sourceTree = "<group>"; };
+		CEA51AF025B5989600D5A724 /* TTLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLoginViewController.swift; sourceTree = "<group>"; };
+		CEA51AF225B5989600D5A724 /* TTWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWindow.swift; sourceTree = "<group>"; };
+		CEA51AF325B5989600D5A724 /* TTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewController.swift; sourceTree = "<group>"; };
+		CEA51AF425B5989600D5A724 /* TTTitleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTitleBar.swift; sourceTree = "<group>"; };
+		CEA51AF525B5989600D5A724 /* TTWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTWindowController.swift; sourceTree = "<group>"; };
+		CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCOM_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTCoreData_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTNetwork_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA51CAD25B5BA9F00D5A724 /* HandyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTProduct_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4372BA9AB39B0F5C37A466E /* Pods-TTProduct-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-macOS.debug.xcconfig"; path = "Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEA51AD725B5984C00D5A724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51C3425B5AEEE00D5A724 /* TTCoreData_macOS.framework in Frameworks */,
+				CEA51C3725B5AF3C00D5A724 /* TTNetwork_macOS.framework in Frameworks */,
+				CEA51BA925B59EEA00D5A724 /* TTCOM_macOS.framework in Frameworks */,
+				8020340844D1E433D7D40C4D /* Pods_TTProduct_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88AD3AC1F9148193D9397ED8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51CAD25B5BA9F00D5A724 /* HandyJSON.framework */,
+				CEA51C3625B5AF3C00D5A724 /* TTNetwork_macOS.framework */,
+				CEA51C3325B5AEEE00D5A724 /* TTCoreData_macOS.framework */,
+				CEA51BA825B59EEA00D5A724 /* TTCOM_macOS.framework */,
+				E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE690FC895AE26488DE59949 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4372BA9AB39B0F5C37A466E /* Pods-TTProduct-macOS.debug.xcconfig */,
+				7AEBDA31361B0B55340FD7B0 /* Pods-TTProduct-macOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		CEA51AD125B5984C00D5A724 = {
+			isa = PBXGroup;
+			children = (
+				CEA51ADC25B5984C00D5A724 /* TTProduct-macOS */,
+				CEA51ADB25B5984C00D5A724 /* Products */,
+				AE690FC895AE26488DE59949 /* Pods */,
+				88AD3AC1F9148193D9397ED8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CEA51ADB25B5984C00D5A724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51ADA25B5984C00D5A724 /* TTProduct-macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEA51ADC25B5984C00D5A724 /* TTProduct-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */,
+				CEA51ADF25B5984C00D5A724 /* ViewController.swift */,
+				CEA51AF125B5989600D5A724 /* Main */,
+				CEA51AF925B5989700D5A724 /* Window */,
+				CEA51AEE25B5989600D5A724 /* ViewController */,
+				CEA51AF825B5989700D5A724 /* View */,
+				CEA51AF625B5989600D5A724 /* Resource */,
+				CEA51AE325B5984D00D5A724 /* Main.storyboard */,
+				CEA51AE625B5984D00D5A724 /* Info.plist */,
+				CEA51AE725B5984D00D5A724 /* TTProduct_macOS.entitlements */,
+			);
+			path = "TTProduct-macOS";
+			sourceTree = "<group>";
+		};
+		CEA51AEE25B5989600D5A724 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51AEF25B5989600D5A724 /* TTHomeViewController.swift */,
+				CEA51AF025B5989600D5A724 /* TTLoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		CEA51AF125B5989600D5A724 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51AF225B5989600D5A724 /* TTWindow.swift */,
+				CEA51AF325B5989600D5A724 /* TTViewController.swift */,
+				CEA51AF425B5989600D5A724 /* TTTitleBar.swift */,
+				CEA51AF525B5989600D5A724 /* TTWindowController.swift */,
+			);
+			path = Main;
+			sourceTree = SOURCE_ROOT;
+		};
+		CEA51AF625B5989600D5A724 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51AE125B5984D00D5A724 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = SOURCE_ROOT;
+		};
+		CEA51AF825B5989700D5A724 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = SOURCE_ROOT;
+		};
+		CEA51AF925B5989700D5A724 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Window;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEA51AD925B5984C00D5A724 /* TTProduct-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA51AEA25B5984D00D5A724 /* Build configuration list for PBXNativeTarget "TTProduct-macOS" */;
+			buildPhases = (
+				3C3474B8613CA00287FC36BD /* [CP] Check Pods Manifest.lock */,
+				CEA51AD625B5984C00D5A724 /* Sources */,
+				CEA51AD725B5984C00D5A724 /* Frameworks */,
+				CEA51AD825B5984C00D5A724 /* Resources */,
+				03273033F93F91761793C359 /* [CP] Embed Pods Frameworks */,
+				CEA51BAB25B59EEA00D5A724 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TTProduct-macOS";
+			productName = "TTProduct-macOS";
+			productReference = CEA51ADA25B5984C00D5A724 /* TTProduct-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEA51AD225B5984C00D5A724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					CEA51AD925B5984C00D5A724 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = CEA51AD525B5984C00D5A724 /* Build configuration list for PBXProject "TTProduct-macOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEA51AD125B5984C00D5A724;
+			productRefGroup = CEA51ADB25B5984C00D5A724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEA51AD925B5984C00D5A724 /* TTProduct-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEA51AD825B5984C00D5A724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51AE225B5984D00D5A724 /* Assets.xcassets in Resources */,
+				CEA51AE525B5984D00D5A724 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03273033F93F91761793C359 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C3474B8613CA00287FC36BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTProduct-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEA51AD625B5984C00D5A724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA51AE025B5984C00D5A724 /* ViewController.swift in Sources */,
+				CEA51ADE25B5984C00D5A724 /* AppDelegate.swift in Sources */,
+				CEA51AFD25B5989700D5A724 /* TTViewController.swift in Sources */,
+				CEA51AFB25B5989700D5A724 /* TTLoginViewController.swift in Sources */,
+				CEA51AFC25B5989700D5A724 /* TTWindow.swift in Sources */,
+				CEA51AFA25B5989700D5A724 /* TTHomeViewController.swift in Sources */,
+				CEA51AFE25B5989700D5A724 /* TTTitleBar.swift in Sources */,
+				CEA51AFF25B5989700D5A724 /* TTWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CEA51AE325B5984D00D5A724 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEA51AE425B5984D00D5A724 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CEA51AE825B5984D00D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEA51AE925B5984D00D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CEA51AEB25B5984D00D5A724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4372BA9AB39B0F5C37A466E /* Pods-TTProduct-macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TTProduct-macOS/TTProduct_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "TTProduct-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTProduct-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CEA51AEC25B5984D00D5A724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEBDA31361B0B55340FD7B0 /* Pods-TTProduct-macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TTProduct-macOS/TTProduct_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "TTProduct-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.tt.www.TTProduct-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEA51AD525B5984C00D5A724 /* Build configuration list for PBXProject "TTProduct-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA51AE825B5984D00D5A724 /* Debug */,
+				CEA51AE925B5984D00D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA51AEA25B5984D00D5A724 /* Build configuration list for PBXNativeTarget "TTProduct-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA51AEB25B5984D00D5A724 /* Debug */,
+				CEA51AEC25B5984D00D5A724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEA51AD225B5984C00D5A724 /* Project object */;
+}

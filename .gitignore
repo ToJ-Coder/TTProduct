@@ -10,11 +10,36 @@ xcuserdata
 UserInterfaceState.xcuserstate
 UserInterface.xcuserstate 
 
-project.xcworkspace/
-TTProduct.xcworkspace/
-TTProduct.xcworkspace/xcuserdata/
+TT.xcworkspace/
+TT.xcworkspace/xcuserdata/
 
-Pods/project.xcodeproj/
+Documentation/Documentation.xcodeproj/
+Documentation/Documentation.xcodeproj/xcuserdata/
+
+TTBridgingCenter/TTBridgingCenter.xcodeproj/
+TTBridgingCenter/TTBridgingCenter.xcodeproj/xcuserdata/
+
+TTCOM/TTCOM.xcodeproj/
+TTCOM/TTCOM.xcodeproj/xcuserdata/
+
+TTCoreData/TTCoreData.xcodeproj/
+TTCoreData/TTCoreData.xcodeproj/xcuserdata/
+
+TTLive/TTLive.xcodeproj/
+TTLive/TTLive.xcodeproj/xcuserdata/
+
+TTNetwork/TTNetwork.xcodeproj/
+TTNetwork/TTNetwork.xcodeproj/xcuserdata/
+
+TTProduct-iPad/TTProduct-iPad.xcodeproj/
+TTProduct-iPad/TTProduct-iPad.xcodeproj/xcuserdata/
+
+TTProduct-macOS/TTProduct-macOS.xcodeproj/
+TTProduct-macOS/TTProduct-macOS.xcodeproj/xcuserdata/
+
+TTTest/TTTest.xcodeproj/
+TTTest/TTTest.xcodeproj/xcuserdata/
+
 Pods/Pods.xcodeproj/
 Pods/Pods.xcodeproj/xcuserdata/
 
