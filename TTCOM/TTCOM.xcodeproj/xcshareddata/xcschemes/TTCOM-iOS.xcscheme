@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEA51B2925B599B900D5A724"
+               BlueprintIdentifier = "CEA51B3B25B59A2D00D5A724"
                BuildableName = "TTCOM_iOS.framework"
                BlueprintName = "TTCOM-iOS"
-               ReferencedContainer = "container:../Documentation/Documentation.xcodeproj">
+               ReferencedContainer = "container:TTCOM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEA51B2925B599B900D5A724"
+            BlueprintIdentifier = "CEA51B3B25B59A2D00D5A724"
             BuildableName = "TTCOM_iOS.framework"
             BlueprintName = "TTCOM-iOS"
-            ReferencedContainer = "container:../Documentation/Documentation.xcodeproj">
+            ReferencedContainer = "container:TTCOM.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

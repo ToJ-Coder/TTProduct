@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEA51B4F25B59AD500D5A724"
+               BlueprintIdentifier = "CEA51B5C25B59AF400D5A724"
                BuildableName = "TTLive_iOS.framework"
                BlueprintName = "TTLive-iOS"
-               ReferencedContainer = "container:../Documentation/Documentation.xcodeproj">
+               ReferencedContainer = "container:TTLive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEA51B4F25B59AD500D5A724"
+            BlueprintIdentifier = "CEA51B5C25B59AF400D5A724"
             BuildableName = "TTLive_iOS.framework"
             BlueprintName = "TTLive-iOS"
-            ReferencedContainer = "container:../Documentation/Documentation.xcodeproj">
+            ReferencedContainer = "container:TTLive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
