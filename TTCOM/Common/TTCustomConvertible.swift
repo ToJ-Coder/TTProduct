@@ -133,10 +133,10 @@ extension ExtString where Self : CustomStringConvertible {
         return tt_toDouble
     }
     
-    var tt_toFloat80: Float80 {
-        var val:Float80 = 0
+    var tt_toFloat80: Float32 {
+        var val:Float32 = 0
         if let string = self as? String {
-            val = Float80(string) ?? 0
+            val = Float32(string) ?? 0
         }
         return val
     }
@@ -205,10 +205,6 @@ extension ExtInt where Self : BinaryInteger {
         return Float64(self)
     }
     
-    var tt_toFloat80: Float80 {
-        return Float80(self)
-    }
-    
     var tt_timeString: String {
         let value = Int(self)
         let timeStr = String(format: "%02dmin:%02ds", value / 60, value % 60)
@@ -275,8 +271,8 @@ extension ExtFloat where Self : BinaryFloatingPoint {
         return Float32(self)
     }
     
-    var tt_toFloat80: Float80 {
-        return Float80(self)
+    var tt_toFloat64: Float64 {
+        return Float64(self)
     }
 }
 
@@ -350,9 +346,6 @@ extension Float : ExtFloat { }
 // MARK: extension Double
 // Double == Float64
 extension Double: ExtFloat { }
-
-// MARK: extension Float80
-extension Float80 : ExtFloat { }
 
 extension Dictionary {
     
