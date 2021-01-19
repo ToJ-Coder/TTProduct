@@ -26,9 +26,9 @@
       location = "group:TTProduct-iPad/TTProduct-iPad.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Pods/Pods.xcodeproj">
+      location = "group:TTTest/TTTest.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TTTest/TTTest.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
