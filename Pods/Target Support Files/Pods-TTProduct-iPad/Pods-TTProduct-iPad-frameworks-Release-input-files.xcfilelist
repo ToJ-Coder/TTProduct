@@ -1,2 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-TTProduct-iPad/Pods-TTProduct-iPad-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/HandyJSON-iOS/HandyJSON.framework
+${BUILT_PRODUCTS_DIR}/KakaJSON-iOS/KakaJSON.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework

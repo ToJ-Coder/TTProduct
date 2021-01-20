@@ -175,9 +175,17 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON-iOS/HandyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON-iOS/KakaJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/HandyJSON-iOS/HandyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KakaJSON-iOS/KakaJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -3,6 +3,7 @@ FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetwork
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-iOS/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON-iOS/HandyJSON.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KakaJSON-iOS/KakaJSON.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-iOS/Alamofire.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON-iOS/HandyJSON.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/KakaJSON-iOS/KakaJSON.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire-iOS" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/HandyJSON-iOS" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/KakaJSON-iOS"
 OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "Alamofire" -framework "CFNetwork" -framework "HandyJSON" -framework "KakaJSON"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}

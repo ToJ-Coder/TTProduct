@@ -4,6 +4,7 @@
 
 # Comment the next line if you don't want to use dynamic frameworks
 
+inhibit_all_warnings!
 workspace 'TT.xcworkspace'
 
 def networking_pods
