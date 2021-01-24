@@ -9,3 +9,6 @@
 
 // CodeComment: 注释规范
 // CodeSegment: 代码规范
+// PhoneDocumentation: 手机端遇到的问题
+// MacDocumentation: 客户端端遇到的问题
+// Git: git规范

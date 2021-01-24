@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8020340844D1E433D7D40C4D /* Pods_TTProduct_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C1284E441C5499A65234E7 /* Pods_TTProduct_macOS.framework */; };
+		CE371BFD25B9551C00DD7711 /* TTChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371BFC25B9551C00DD7711 /* TTChildrenViewController.swift */; };
+		CE371C0925B9585900DD7711 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371C0825B9585900DD7711 /* Test.swift */; };
+		CE371C0B25B958AA00DD7711 /* TTDraggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371C0A25B958AA00DD7711 /* TTDraggedView.swift */; };
 		CEA51ADE25B5984C00D5A724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */; };
 		CEA51AE025B5984C00D5A724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADF25B5984C00D5A724 /* ViewController.swift */; };
 		CEA51AE225B5984D00D5A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA51AE125B5984D00D5A724 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		7AEBDA31361B0B55340FD7B0 /* Pods-TTProduct-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTProduct-macOS.release.xcconfig"; path = "Target Support Files/Pods-TTProduct-macOS/Pods-TTProduct-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		CE371BFC25B9551C00DD7711 /* TTChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChildrenViewController.swift; sourceTree = "<group>"; };
+		CE371C0825B9585900DD7711 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		CE371C0A25B958AA00DD7711 /* TTDraggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDraggedView.swift; sourceTree = "<group>"; };
 		CEA51ADA25B5984C00D5A724 /* TTProduct-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTProduct-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA51ADF25B5984C00D5A724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +108,22 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		CE371C0625B9584000DD7711 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE371C0A25B958AA00DD7711 /* TTDraggedView.swift */,
+			);
+			path = View;
+			sourceTree = SOURCE_ROOT;
+		};
+		CE371C0725B9584E00DD7711 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				CE371C0825B9585900DD7711 /* Test.swift */,
+			);
+			path = Window;
+			sourceTree = SOURCE_ROOT;
+		};
 		CEA51AD125B5984C00D5A724 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +148,9 @@
 				CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */,
 				CEA51ADF25B5984C00D5A724 /* ViewController.swift */,
 				CEA51AF125B5989600D5A724 /* Main */,
-				CEA51AF925B5989700D5A724 /* Window */,
+				CE371C0725B9584E00DD7711 /* Window */,
 				CEA51AEE25B5989600D5A724 /* ViewController */,
-				CEA51AF825B5989700D5A724 /* View */,
+				CE371C0625B9584000DD7711 /* View */,
 				CEA51AF625B5989600D5A724 /* Resource */,
 				CEA51AE325B5984D00D5A724 /* Main.storyboard */,
 				CEA51AE625B5984D00D5A724 /* Info.plist */,
@@ -142,6 +164,7 @@
 			children = (
 				CEA51AEF25B5989600D5A724 /* TTHomeViewController.swift */,
 				CEA51AF025B5989600D5A724 /* TTLoginViewController.swift */,
+				CE371BFC25B9551C00DD7711 /* TTChildrenViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = SOURCE_ROOT;
@@ -163,20 +186,6 @@
 				CEA51AE125B5984D00D5A724 /* Assets.xcassets */,
 			);
 			path = Resource;
-			sourceTree = SOURCE_ROOT;
-		};
-		CEA51AF825B5989700D5A724 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = SOURCE_ROOT;
-		};
-		CEA51AF925B5989700D5A724 /* Window */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Window;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -293,12 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE371BFD25B9551C00DD7711 /* TTChildrenViewController.swift in Sources */,
+				CE371C0B25B958AA00DD7711 /* TTDraggedView.swift in Sources */,
 				CEA51AE025B5984C00D5A724 /* ViewController.swift in Sources */,
 				CEA51ADE25B5984C00D5A724 /* AppDelegate.swift in Sources */,
 				CEA51AFD25B5989700D5A724 /* TTViewController.swift in Sources */,
 				CEA51AFB25B5989700D5A724 /* TTLoginViewController.swift in Sources */,
 				CEA51AFC25B5989700D5A724 /* TTWindow.swift in Sources */,
 				CEA51AFA25B5989700D5A724 /* TTHomeViewController.swift in Sources */,
+				CE371C0925B9585900DD7711 /* Test.swift in Sources */,
 				CEA51AFE25B5989700D5A724 /* TTTitleBar.swift in Sources */,
 				CEA51AFF25B5989700D5A724 /* TTWindowController.swift in Sources */,
 			);

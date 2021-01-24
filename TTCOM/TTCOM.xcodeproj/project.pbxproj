@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE371BFF25B9559B00DD7711 /* NSView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371BFE25B9559B00DD7711 /* NSView+Ext.swift */; };
 		CEA51B2125B599A500D5A724 /* TTCOM_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA51B1F25B599A500D5A724 /* TTCOM_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEA51B4025B59A2D00D5A724 /* TTCOM_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA51B3E25B59A2D00D5A724 /* TTCOM_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEA51B9F25B59EA500D5A724 /* TTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51B9A25B59EA500D5A724 /* TTButton.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE371BFE25B9559B00DD7711 /* NSView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Ext.swift"; sourceTree = "<group>"; };
 		CEA51B1D25B599A500D5A724 /* TTCOM_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTCOM_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA51B1F25B599A500D5A724 /* TTCOM_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCOM_macOS.h; sourceTree = "<group>"; };
 		CEA51B2025B599A500D5A724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */,
 				CEA51BB525B5AB5800D5A724 /* Font+Ex.swift */,
 				CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */,
+				CE371BFE25B9559B00DD7711 /* NSView+Ext.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				CEA51BBC25B5AB5800D5A724 /* Font+Ex.swift in Sources */,
 				CEA51BC825B5ABBC00D5A724 /* TTEncryptionProtocol.swift in Sources */,
 				CEA51BB825B5AB5800D5A724 /* Color+Ex.swift in Sources */,
+				CE371BFF25B9559B00DD7711 /* NSView+Ext.swift in Sources */,
 				CEA51BCA25B5ABBC00D5A724 /* TTModelConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

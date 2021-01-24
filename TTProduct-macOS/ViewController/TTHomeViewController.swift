@@ -14,6 +14,11 @@ class TTHomeViewController: TTViewController {
     
     var b:TTButton?
     var b2:TTButton?
+    private lazy var childrenVC: TTChildrenViewController = {
+       let vc = TTChildrenViewController()
+        
+        return vc
+    }()
     
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -42,12 +47,16 @@ class TTHomeViewController: TTViewController {
         view.addSubview(button)
         button.tt_addTarget(self, action: #selector(self.didTapTest), for: .leftMouseUp)
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        
+        addChild(childrenVC)
+        view.addSubview(childrenVC.view)
+        childrenVC.view.frame = CGRect(x: 100, y: 400, width: 100, height: 100)
     }
     
     @objc private func didTapTest() {
         print(className + " : " + #function)
         
-        didTapTest2()
+//        didTapTest2()
     }
     
     override func windowShouldClose(_ sender: NSWindow) -> Bool {

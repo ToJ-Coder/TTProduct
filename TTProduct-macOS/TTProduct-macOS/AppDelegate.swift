@@ -52,11 +52,11 @@ extension AppDelegate {
     }
     
     private func setupMakeWindow() -> NSWindow {
-        let vc = ViewController()
-//        let vc = TTHomeViewController()
+//        let vc = ViewController()
+        let vc = TTHomeViewController()
         
         let window = TTWindow(contentViewController: vc)
-       
+        window.isMovableByWindowBackground = false
         let rect = CGRect(x: 0, y: 0, width: 1000, height: 960)
         window.titleBarHeight = 50
         window.setContentSize(rect.size)

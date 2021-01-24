@@ -28,7 +28,7 @@ open class TTLabel: NSTextField {
         }
     }
     
-    public var tt_backgroundColor: NSColor? {
+    public override var tt_backgroundColor: NSColor? {
         set { backgroundColor = newValue }
         get { return backgroundColor }
     }

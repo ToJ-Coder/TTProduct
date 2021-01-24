@@ -52,17 +52,6 @@ open class TTButton: NSButton {
     
     public var tt_userInteractionEnabled: Bool = true
     
-    public var tt_backgroundColor: NSColor? {
-        set {
-            if !wantsLayer { wantsLayer = true }
-            layer?.backgroundColor = newValue?.cgColor
-        }
-        get {
-            let color = layer?.backgroundColor ?? .clear
-            return NSColor(cgColor: color)
-        }
-    }
-    
     /// 文字的渲染属性
     /// 设置后, 下面属性无效
     /// tt_titleFont, tt_lineStyle, tt_lineStyle, tt_alignment
