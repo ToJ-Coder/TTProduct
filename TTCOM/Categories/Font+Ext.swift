@@ -1,9 +1,8 @@
 //
-//  Font+Ex.swift
+//  Font+Ext.swift
 //  VIPCODE-iPad
 //
-//  Created by Taurin on 4/26/20.
-//  Copyright © 2020 韩笑. All rights reserved.
+//  Created by Toj on 1/14/21.
 //
 
 #if canImport(Cocoa)
@@ -28,7 +27,7 @@ public enum RoundedCNWeight : String {
 
 extension TTFont {
     
-    static func roundedCnFont( weight : RoundedCNWeight = .Regular, size : CGFloat) -> TTFont? {
+    static func tt_roundedCnFont( weight : RoundedCNWeight = .Regular, size : CGFloat) -> TTFont? {
         let name = "Resource-Han-Rounded-CN-" + weight.rawValue
         
         return TTFont(name: name, size: size)

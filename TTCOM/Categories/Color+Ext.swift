@@ -1,9 +1,8 @@
 //
-//  Color+Ex.swift
+//  Color+Ext.swift
 //  VIPCommon
 //
-//  Created by 韩笑 on 2020/5/29.
-//  Copyright © 2020 VIPCODE. All rights reserved.
+//  Created by Toj on 1/14/21.
 //
 
 #if canImport(Cocoa)

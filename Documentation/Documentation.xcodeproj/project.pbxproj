@@ -9,6 +9,8 @@
 /* Begin PBXFileReference section */
 		CE7AC13F25BD6FB500A60888 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		CE7AC14025BD769000A60888 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
+		CE7AC16325BEDC9C00A60888 /* Internationalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internationalization.swift; sourceTree = "<group>"; };
+		CE7AC16425BEE06D00A60888 /* InfoPlistKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlistKey.swift; sourceTree = "<group>"; };
 		CEA5143425B53ED000D5A724 /* Documentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documentation.swift; sourceTree = "<group>"; };
 		CEA5143C25B53F1800D5A724 /* CodeComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeComment.swift; sourceTree = "<group>"; };
 		CEA5143D25B53F1800D5A724 /* CodeSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSegment.swift; sourceTree = "<group>"; };
@@ -20,6 +22,7 @@
 		CEA5141C25B53EBD00D5A724 = {
 			isa = PBXGroup;
 			children = (
+				CE7AC16325BEDC9C00A60888 /* Internationalization.swift */,
 				CE7AC13F25BD6FB500A60888 /* Experience.swift */,
 				CEA5143425B53ED000D5A724 /* Documentation.swift */,
 				CEA5143C25B53F1800D5A724 /* CodeComment.swift */,
@@ -27,6 +30,7 @@
 				CE7AC14025BD769000A60888 /* Git.swift */,
 				CEA5144925B53FBC00D5A724 /* PhoneDocumentation.swift */,
 				CEA5144625B53F9F00D5A724 /* MacDocumentation.swift */,
+				CE7AC16425BEE06D00A60888 /* InfoPlistKey.swift */,
 			);
 			sourceTree = "<group>";
 		};

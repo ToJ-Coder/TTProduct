@@ -11,6 +11,10 @@
 		CE371BFD25B9551C00DD7711 /* TTChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371BFC25B9551C00DD7711 /* TTChildrenViewController.swift */; };
 		CE371C0925B9585900DD7711 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371C0825B9585900DD7711 /* Test.swift */; };
 		CE371C0B25B958AA00DD7711 /* TTDraggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE371C0A25B958AA00DD7711 /* TTDraggedView.swift */; };
+		CE7AC15425BED87000A60888 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7AC15625BED87000A60888 /* Localizable.strings */; };
+		CE7AC15A25BED8CA00A60888 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE7AC15C25BED8CA00A60888 /* InfoPlist.strings */; };
+		CE7AC16125BEDC5700A60888 /* CallBrowserWithChrome.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE7AC15F25BEDC5700A60888 /* CallBrowserWithChrome.scpt */; };
+		CE7AC16225BEDC5700A60888 /* CallBrowserWithSafari.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE7AC16025BEDC5700A60888 /* CallBrowserWithSafari.scpt */; };
 		CEA51ADE25B5984C00D5A724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */; };
 		CEA51AE025B5984C00D5A724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51ADF25B5984C00D5A724 /* ViewController.swift */; };
 		CEA51AE225B5984D00D5A724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA51AE125B5984D00D5A724 /* Assets.xcassets */; };
@@ -50,6 +54,14 @@
 		CE371BFC25B9551C00DD7711 /* TTChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTChildrenViewController.swift; sourceTree = "<group>"; };
 		CE371C0825B9585900DD7711 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CE371C0A25B958AA00DD7711 /* TTDraggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTDraggedView.swift; sourceTree = "<group>"; };
+		CE7AC14F25BED71600A60888 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		CE7AC15125BED71B00A60888 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		CE7AC15525BED87000A60888 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE7AC15725BED87A00A60888 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE7AC15B25BED8CA00A60888 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		CE7AC15D25BED8CE00A60888 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE7AC15F25BEDC5700A60888 /* CallBrowserWithChrome.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = CallBrowserWithChrome.scpt; sourceTree = "<group>"; };
+		CE7AC16025BEDC5700A60888 /* CallBrowserWithSafari.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = CallBrowserWithSafari.scpt; sourceTree = "<group>"; };
 		CEA51ADA25B5984C00D5A724 /* TTProduct-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTProduct-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA51ADD25B5984C00D5A724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEA51ADF25B5984C00D5A724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +136,15 @@
 			path = Window;
 			sourceTree = SOURCE_ROOT;
 		};
+		CE7AC15E25BEDC5700A60888 /* AS */ = {
+			isa = PBXGroup;
+			children = (
+				CE7AC15F25BEDC5700A60888 /* CallBrowserWithChrome.scpt */,
+				CE7AC16025BEDC5700A60888 /* CallBrowserWithSafari.scpt */,
+			);
+			path = AS;
+			sourceTree = "<group>";
+		};
 		CEA51AD125B5984C00D5A724 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +204,9 @@
 		CEA51AF625B5989600D5A724 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CE7AC15E25BEDC5700A60888 /* AS */,
+				CE7AC15C25BED8CA00A60888 /* InfoPlist.strings */,
+				CE7AC15625BED87000A60888 /* Localizable.strings */,
 				CEA51AE125B5984D00D5A724 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -232,6 +256,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = CEA51AD125B5984C00D5A724;
 			productRefGroup = CEA51ADB25B5984C00D5A724 /* Products */;
@@ -248,8 +273,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7AC16225BEDC5700A60888 /* CallBrowserWithSafari.scpt in Resources */,
 				CEA51AE225B5984D00D5A724 /* Assets.xcassets in Resources */,
+				CE7AC15A25BED8CA00A60888 /* InfoPlist.strings in Resources */,
+				CE7AC15425BED87000A60888 /* Localizable.strings in Resources */,
 				CEA51AE525B5984D00D5A724 /* Main.storyboard in Resources */,
+				CE7AC16125BEDC5700A60888 /* CallBrowserWithChrome.scpt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,10 +348,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CE7AC15625BED87000A60888 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7AC15525BED87000A60888 /* zh-Hans */,
+				CE7AC15725BED87A00A60888 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CE7AC15C25BED8CA00A60888 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE7AC15B25BED8CA00A60888 /* zh-Hans */,
+				CE7AC15D25BED8CE00A60888 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		CEA51AE325B5984D00D5A724 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CEA51AE425B5984D00D5A724 /* Base */,
+				CE7AC14F25BED71600A60888 /* en */,
+				CE7AC15125BED71B00A60888 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -334,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -395,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

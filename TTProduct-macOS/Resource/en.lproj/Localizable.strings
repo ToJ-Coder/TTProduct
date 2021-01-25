@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  TTProduct-macOS
+
+  Created by Toj on 1/25/21.
+  
+*/
+
+// MARK: - COMMON
+"取消" = "Cancel";
+"确定" = "OK";
+"确认" = "Confirm";
+"退出" = "Quit";
+"提示" = "Tips";
+"异常" = "Abnormal";
+"未知" = "UNknown";
+"选取" = "Select";
+"知道" = "iKnow";
+"关闭" = "Close";
+
+"工程" = "My product";

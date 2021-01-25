@@ -14,12 +14,12 @@
 		CEA51BA125B59EA500D5A724 /* TTLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51B9B25B59EA500D5A724 /* TTLabelCell.swift */; };
 		CEA51BA325B59EA500D5A724 /* TTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51B9C25B59EA500D5A724 /* TTLabel.swift */; };
 		CEA51BA525B59EA500D5A724 /* TTResponderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51B9D25B59EA500D5A724 /* TTResponderProtocol.swift */; };
-		CEA51BB725B5AB5800D5A724 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB325B5AB5800D5A724 /* Color+Ex.swift */; };
-		CEA51BB825B5AB5800D5A724 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB325B5AB5800D5A724 /* Color+Ex.swift */; };
+		CEA51BB725B5AB5800D5A724 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB325B5AB5800D5A724 /* Color+Ext.swift */; };
+		CEA51BB825B5AB5800D5A724 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB325B5AB5800D5A724 /* Color+Ext.swift */; };
 		CEA51BB925B5AB5800D5A724 /* Striing+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */; };
 		CEA51BBA25B5AB5800D5A724 /* Striing+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */; };
-		CEA51BBB25B5AB5800D5A724 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB525B5AB5800D5A724 /* Font+Ex.swift */; };
-		CEA51BBC25B5AB5800D5A724 /* Font+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB525B5AB5800D5A724 /* Font+Ex.swift */; };
+		CEA51BBB25B5AB5800D5A724 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB525B5AB5800D5A724 /* Font+Ext.swift */; };
+		CEA51BBC25B5AB5800D5A724 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB525B5AB5800D5A724 /* Font+Ext.swift */; };
 		CEA51BBD25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */; };
 		CEA51BBE25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */; };
 		CEA51BC525B5ABBC00D5A724 /* TTCustomConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA51BC125B5ABBC00D5A724 /* TTCustomConvertible.swift */; };
@@ -44,9 +44,9 @@
 		CEA51B9B25B59EA500D5A724 /* TTLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabelCell.swift; sourceTree = "<group>"; };
 		CEA51B9C25B59EA500D5A724 /* TTLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTLabel.swift; sourceTree = "<group>"; };
 		CEA51B9D25B59EA500D5A724 /* TTResponderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTResponderProtocol.swift; sourceTree = "<group>"; };
-		CEA51BB325B5AB5800D5A724 /* Color+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		CEA51BB325B5AB5800D5A724 /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Striing+Ext.swift"; sourceTree = "<group>"; };
-		CEA51BB525B5AB5800D5A724 /* Font+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Ex.swift"; sourceTree = "<group>"; };
+		CEA51BB525B5AB5800D5A724 /* Font+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		CEA51BC125B5ABBC00D5A724 /* TTCustomConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTCustomConvertible.swift; sourceTree = "<group>"; };
 		CEA51BC225B5ABBC00D5A724 /* TTEncryptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTEncryptionProtocol.swift; sourceTree = "<group>"; };
@@ -72,9 +72,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7AC14225BED2CC00A60888 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */,
+				CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */,
+				CEA51BB325B5AB5800D5A724 /* Color+Ext.swift */,
+				CEA51BB525B5AB5800D5A724 /* Font+Ext.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CE7AC14325BED30400A60888 /* CUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CUI;
+			sourceTree = "<group>";
+		};
+		CE7AC14425BED30400A60888 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		CEA5164F25B55DC700D5A724 = {
 			isa = PBXGroup;
 			children = (
+				CE7AC14225BED2CC00A60888 /* Categories */,
 				CEA51B4625B59A6300D5A724 /* Common */,
 				CEA51B3D25B59A2D00D5A724 /* TTCOM-iOS */,
 				CEA51B1E25B599A500D5A724 /* TTCOM-macOS */,
@@ -105,6 +131,8 @@
 		CEA51B3D25B59A2D00D5A724 /* TTCOM-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				CE7AC14425BED30400A60888 /* Categories */,
+				CE7AC14325BED30400A60888 /* CUI */,
 				CEA51B3E25B59A2D00D5A724 /* TTCOM_iOS.h */,
 				CEA51B3F25B59A2D00D5A724 /* Info.plist */,
 			);
@@ -136,10 +164,6 @@
 		CEA51BB225B5AB5800D5A724 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				CEA51BB325B5AB5800D5A724 /* Color+Ex.swift */,
-				CEA51BB425B5AB5800D5A724 /* Striing+Ext.swift */,
-				CEA51BB525B5AB5800D5A724 /* Font+Ex.swift */,
-				CEA51BB625B5AB5800D5A724 /* NSObject+Ext.swift */,
 				CE371BFE25B9559B00DD7711 /* NSView+Ext.swift */,
 			);
 			path = Categories;
@@ -260,19 +284,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA51BBA25B5AB5800D5A724 /* Striing+Ext.swift in Sources */,
-				CEA51BBE25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */,
-				CEA51BA525B59EA500D5A724 /* TTResponderProtocol.swift in Sources */,
-				CEA51BCC25B5ABBC00D5A724 /* TTOperator.swift in Sources */,
-				CEA51BA125B59EA500D5A724 /* TTLabelCell.swift in Sources */,
-				CEA51BA325B59EA500D5A724 /* TTLabel.swift in Sources */,
-				CEA51B9F25B59EA500D5A724 /* TTButton.swift in Sources */,
 				CEA51BC625B5ABBC00D5A724 /* TTCustomConvertible.swift in Sources */,
-				CEA51BBC25B5AB5800D5A724 /* Font+Ex.swift in Sources */,
-				CEA51BC825B5ABBC00D5A724 /* TTEncryptionProtocol.swift in Sources */,
-				CEA51BB825B5AB5800D5A724 /* Color+Ex.swift in Sources */,
-				CE371BFF25B9559B00DD7711 /* NSView+Ext.swift in Sources */,
 				CEA51BCA25B5ABBC00D5A724 /* TTModelConvertible.swift in Sources */,
+				CEA51BCC25B5ABBC00D5A724 /* TTOperator.swift in Sources */,
+				CEA51BC825B5ABBC00D5A724 /* TTEncryptionProtocol.swift in Sources */,
+				CEA51BBE25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */,
+				CEA51BBA25B5AB5800D5A724 /* Striing+Ext.swift in Sources */,
+				CEA51BB825B5AB5800D5A724 /* Color+Ext.swift in Sources */,
+				CEA51BBC25B5AB5800D5A724 /* Font+Ext.swift in Sources */,
+				CEA51BA525B59EA500D5A724 /* TTResponderProtocol.swift in Sources */,
+				CEA51B9F25B59EA500D5A724 /* TTButton.swift in Sources */,
+				CEA51BA325B59EA500D5A724 /* TTLabel.swift in Sources */,
+				CEA51BA125B59EA500D5A724 /* TTLabelCell.swift in Sources */,
+				CE371BFF25B9559B00DD7711 /* NSView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,14 +304,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA51BC725B5ABBC00D5A724 /* TTEncryptionProtocol.swift in Sources */,
 				CEA51BC525B5ABBC00D5A724 /* TTCustomConvertible.swift in Sources */,
-				CEA51BB925B5AB5800D5A724 /* Striing+Ext.swift in Sources */,
-				CEA51BBD25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */,
-				CEA51BB725B5AB5800D5A724 /* Color+Ex.swift in Sources */,
-				CEA51BBB25B5AB5800D5A724 /* Font+Ex.swift in Sources */,
 				CEA51BC925B5ABBC00D5A724 /* TTModelConvertible.swift in Sources */,
 				CEA51BCB25B5ABBC00D5A724 /* TTOperator.swift in Sources */,
+				CEA51BC725B5ABBC00D5A724 /* TTEncryptionProtocol.swift in Sources */,
+				CEA51BBD25B5AB5800D5A724 /* NSObject+Ext.swift in Sources */,
+				CEA51BB925B5AB5800D5A724 /* Striing+Ext.swift in Sources */,
+				CEA51BB725B5AB5800D5A724 /* Color+Ext.swift in Sources */,
+				CEA51BBB25B5AB5800D5A724 /* Font+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,8 +55,9 @@ class TTHomeViewController: TTViewController {
     
     @objc private func didTapTest() {
         print(className + " : " + #function)
+        let str = NSLocalizedString("确定", comment: "确定")
         
-//        didTapTest2()
+        print(str)
     }
     
     override func windowShouldClose(_ sender: NSWindow) -> Bool {

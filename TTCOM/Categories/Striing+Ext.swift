@@ -58,7 +58,7 @@ extension String {
     }
     
     // 中文 转 unicode
-    public var unicode: String {
+    public var tt_unicode: String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
     }
 }
@@ -78,13 +78,13 @@ extension String {
 #if canImport(UIKit)
 import UIKit
 extension String {
-    public func getSize(maxSize : CGSize, fontSize : CGFloat) -> CGSize {
+    public func tt_size(maxSize : CGSize, fontSize : CGFloat) -> CGSize {
         let font = UIFont.roundedCnFont(weight: .Bold, size: fontSize)!
         let attributes = [NSAttributedString.Key.font:font]
         let rect : CGRect = self.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         return CGSize(width: rect.width + 1, height: rect.height + 1)
     }
-    public func getSize(maxSize : CGSize, font : UIFont) -> CGSize {
+    public func tt_size(maxSize : CGSize, font : UIFont) -> CGSize {
         let attributes = [NSAttributedString.Key.font:font]
         let rect : CGRect = self.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         return CGSize(width: rect.width + 1, height: rect.height + 1)
@@ -95,7 +95,7 @@ extension String {
 #if canImport(AppKit)
 import AppKit
 extension String {
-    public func getSize(maxSize : CGSize, fontSize : CGFloat) -> NSSize {
+    public func tt_size(maxSize : CGSize, fontSize : CGFloat) -> NSSize {
         let font = NSFont.systemFont(ofSize: fontSize)
         let attributes = [NSAttributedString.Key.font:font]
         let rect : CGRect = self.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
